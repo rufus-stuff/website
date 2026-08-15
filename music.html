@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="/css/reset.css" rel="stylesheet" type="text/css" media="all">
+  <link href="/css/global.css" rel="stylesheet" type="text/css" media="all">
+  <link href="/css/views.css" rel="stylesheet" type="text/css" media="all">
+  <script src="/scripts/taskbarClock.js" defer></script>
+
+  <title>Music | Rufus</title>
+</head>
+<body>
+  <div class="window">
+    <div class="window-bar">
+      <p>Music I listen to</p>
+    </div>
+    <main class="window-view view-details-grid">
+      <!-- List of music start -->
+
+      <div class="grid-category">
+        <h2>Category</h2>
+        <p>Possible description</p>
+      </div>
+
+      <details name="music">
+        <summary>
+          <img src="resources/musicIcons/xg.jpeg" alt="XG">
+        </summary>
+        <article>
+          <h3>XG (Xtraordinary Genes)</h3>
+          <p>I became a big fan of Formula 1 by accident, just because I enjoyed watching the ✨numbers✨ </p>
+        </article>
+      </details>
+      <details name="music">
+        <summary>
+          <img src="resources/musicIcons/hyelyn.jpg" alt="Hyelyn Joo">
+        </summary>
+        <article>
+          <h3>Hyelyn Joo</h3>
+          <p>I became a big fan of Formula 1 by accident, just because I enjoyed watching the ✨numbers✨ </p>
+        </article>
+      </details>
+
+      <!-- List of music end -->
+    </main>
+  </div>
+
+  <!-- Taskbar and menu start -->
+  <div id="startMenu" popover>
+    <div>
+      <p>rufusrufus.neocities.org</p>
+    </div>
+    <nav>
+      <a href="/likes.html">
+        <img src="/resources/icons/folder_paper.png" alt="Folder icon">
+        Stuff I like
+      </a>
+      <a href="/music.html">
+        <img src="/resources/icons/cd_audio.png" alt="Audio cd">
+        Cool music
+      </a>
+      <a href="/about.html">
+        <img src="/resources/icons/computer.png" alt="Computer icon">
+        System info
+      </a>
+    </nav>
+  </div>
+  <div id="taskbar">
+    <div class="taskbar-left">
+      <button popovertarget="startMenu">
+        <img src="/resources/start.png" alt="Start menu icon">
+        Start
+      </button>
+      <div class="taskbar-spacer"></div>
+    </div>
+    <div class="taskbar-right">
+      <span id="taskbarClock">00:00</span>
+    </div>
+  </div>
+  <!-- Taskbar and menu end -->
+</body>
+</html>

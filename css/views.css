@@ -1,0 +1,51 @@
+:root {
+  --grid-size: 120px;
+}
+
+.view-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--grid-size));
+  gap: 8px;
+  width: 100%;
+
+  /* Trick to make open entries use the full row. */
+  details:open, .grid-category { grid-column: 1/-1; }
+
+  .grid-category {
+    padding-bottom: 2px;
+    border-bottom: 1px solid black;
+  }
+
+  details {
+    > summary {
+      list-style: none;
+      ::-webkit-details-marker { display: none; }
+      width: var(--grid-size);
+      box-shadow: var(--border-bevel);
+      padding: 3px;
+
+      &:active{
+        box-shadow: var(--border-bevel-pressed);
+        img { filter: brightness(0.7) }
+      }
+
+      img{
+        width: var(--grid-size);
+        height: var(--grid-size);
+        object-fit: cover;
+      }
+    }
+
+    article {
+      margin-block: 4px 8px;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid black;
+        margin-top: 8px;
+      }
+    }
+  }
+}
