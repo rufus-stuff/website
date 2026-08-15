@@ -9,6 +9,7 @@ html {
   min-height: 100%;
   background: linear-gradient(170deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 40%, rgba(6, 131, 209, 1) 100%);
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 /* Atoms */
@@ -126,7 +127,11 @@ div.window {
   background: lightgray;
   padding: 3px;
   width: 30rem;
-  margin: 2rem;
+  position: absolute;
+  resize: both;
+  overflow: hidden;
+  min-width: 600px;
+  min-height: 250px;
   box-shadow: var(--border-bevel);
 
   .window-bar {
@@ -138,15 +143,25 @@ div.window {
     background-color: rgb(26 26 175);
     color: white;
     font-weight: 700;
-    width: calc(100% - 2px);
+    width: calc(100% - 4px);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: grab;
   }
 
   .window-view {
     margin-block: 0 2px;
     margin-inline: 1px;
     padding: 4px;
+    overflow: auto;
+  }
+
+  &.grabbing {
+    user-select: none;
+    -webkit-user-select: none;
+    opacity: 0.85;
+
+    * { cursor: grabbing !important; }
   }
 }
