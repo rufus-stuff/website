@@ -13,6 +13,15 @@ html {
 }
 
 /* Atoms */
+#coverPreviewer {
+  width: 80px;
+  height: 80px;
+  background-color: silver;
+  position: fixed;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 button, a.btn{
   display: inline-block;
   background-color: silver;
@@ -154,7 +163,9 @@ div.window {
     margin-block: 0 2px;
     margin-inline: 1px;
     padding: 4px;
-    overflow: auto;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   &.grabbing {
