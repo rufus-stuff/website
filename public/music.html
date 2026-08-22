@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="css/reset.css" rel="stylesheet" type="text/css" media="all">
-  <link href="css/global.css" rel="stylesheet" type="text/css" media="all">
+  {{ head-content }}
   <link href="css/views.css" rel="stylesheet" type="text/css" media="all">
-  <script src="scripts/taskbarClock.js" defer></script>
   <script src="scripts/musicPlayer.js" defer></script>
-  <script src="scripts/rwm.js" defer></script>
 
   <title>Music | Rufus</title>
 </head>
@@ -53,81 +47,7 @@
           <p>Orla Gartland is a great artist from Ireland. I absolutely love her and I've been a part of her <a href="https://www.patreon.com/c/orlagartland/posts">Secret Demo Club</a> for a couple of years now!</p>
           <h4>Fav tracks:</h4>
           <table class="tracklist">
-            <tr data-link="FfXHfP9d7OA" data-cover="og_flatline.jpg">
-              <td>1</td>
-              <td><a href="https://youtu.be/FfXHfP9d7OA">Flatline</a></td>
-              <td>3:22</td>
-            </tr>
-            <tr data-link="1pCUJOH9BCE" data-cover="og_enah.jpg">
-              <td>2</td>
-              <td><a href="https://youtu.be/1pCUJOH9BCE">Everybody Needs a Hero</a></td>
-              <td>4:20</td>
-            </tr>
-            <tr data-link="rKWJICaKYGY" data-cover="og_mlyou.jpg">
-              <td>3</td>
-              <td><a href="https://youtu.be/rKWJICaKYGY">More Like You</a></td>
-              <td>3:41</td>
-            </tr>
-            <tr data-link="-MEkPfGSatE" data-cover="og_thehit.jpg">
-              <td>4</td>
-              <td><a href="https://youtu.be/-MEkPfGSatE">The Hit</a></td>
-              <td>3:31</td>
-            </tr>
-            <tr data-link="1_pICv1FxnY" data-cover="og_ditm.jpg">
-              <td>5</td>
-              <td><a href="https://youtu.be/1_pICv1FxnY">Did It to Myself</a></td>
-              <td>3:17</td>
-            </tr>
-            <tr data-link="6yRN-W11ZCY" data-cover="og_enah.jpg">
-              <td>6</td>
-              <td><a href="https://youtu.be/6yRN-W11ZCY">SOUND OF LETTING GO</a></td>
-              <td>2:50</td>
-            </tr>
-            <tr data-link="bonEOAMGkqw" data-cover="og_woti.jpg">
-              <td>7</td>
-              <td><a href="https://youtu.be/bonEOAMGkqw">Things That I've Learned</a></td>
-              <td>2:35</td>
-            </tr>
-            <tr data-link="LgAvGT28lqc" data-cover="og_woti.jpg">
-              <td>8</td>
-              <td><a href="https://youtu.be/LgAvGT28lqc">You're Not Special, Babe</a></td>
-              <td>3:24</td>
-            </tr>
-            <tr data-link="3OdS2Vf0QL0" data-cover="og_fseason.jpg">
-              <td>9</td>
-              <td><a href="https://youtu.be/3OdS2Vf0QL0">oh GOD</a></td>
-              <td>2:48</td>
-            </tr>
-            <tr data-link="GITYxF3iRgs" data-cover="og_dymind.jpg">
-              <td>10</td>
-              <td><a href="https://youtu.be/GITYxF3iRgs">Do You Mind?</a></td>
-              <td>3:38</td>
-            </tr>
-            <tr data-link="MewlsAFfD-k" data-cover="og_lttp.jpg">
-              <td>11</td>
-              <td><a href="https://youtu.be/MewlsAFfD-k">Late to the Party (feat. Declan McKenna)</a></td>
-              <td>3:36</td>
-            </tr>
-            <tr data-link="" data-cover="og_sdc.png">
-              <td>12</td>
-              <td>Madison (demo)</td>
-              <td>3:44</td>
-            </tr>
-            <tr data-link="o4ZdAR9S-Tg" data-cover="og_woti.jpg">
-              <td>13</td>
-              <td><a href="https://youtu.be/o4ZdAR9S-Tg">Bloodline / Difficult Things</a></td>
-              <td>4:23</td>
-            </tr>
-            <tr data-link="eUoPW_7jLDA" data-cover="og_woti.jpg">
-              <td>14</td>
-              <td><a href="https://youtu.be/eUoPW_7jLDA">Codependency</a></td>
-              <td>3:12</td>
-            </tr>
-            <tr data-link="9e_DcHF918w" data-cover="og_fio.jpg">
-              <td>15</td>
-              <td><a href="https://youtu.be/9e_DcHF918w">Figure It Out</a></td>
-              <td>3:21</td>
-            </tr>
+            {{ list/tracklist#orla }}
           </table>
         </article>
       </details>
@@ -160,38 +80,6 @@
   </div>
 
 
-  <!-- Taskbar and menu start -->
-  <div id="startMenu" popover>
-    <div>
-      <p>rufusrufus.neocities.org</p>
-    </div>
-    <nav>
-      <a href="likes.html">
-        <img src="resources/icons/folder_paper.png" alt="Folder icon">
-        Stuff I like
-      </a>
-      <a href="music.html">
-        <img src="resources/icons/cd_audio.png" alt="Audio cd">
-        Cool music
-      </a>
-      <a href="about.html">
-        <img src="resources/icons/computer.png" alt="Computer icon">
-        System info
-      </a>
-    </nav>
-  </div>
-  <div id="taskbar">
-    <div class="taskbar-left">
-      <button popovertarget="startMenu">
-        <img src="resources/start.png" alt="Start menu icon">
-        Start
-      </button>
-      <div class="taskbar-spacer"></div>
-    </div>
-    <div class="taskbar-right">
-      <span id="taskbarClock">00:00</span>
-    </div>
-  </div>
-  <!-- Taskbar and menu end -->
+  {{ taskbar }}
 </body>
 </html>
