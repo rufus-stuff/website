@@ -49,7 +49,6 @@ def expand_smart_tag(path, section):
     try:
         data = json.loads(raw_data)
     except Exception as e:
-        print(raw_data)
         sys.exit(f"Failed parsing json block in {private_path}")
 
     items = data[section]
