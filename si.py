@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Static include 0.2 -- RufusRufus
+# Static include 0.3 -- RufusRufus
 
 import re                   # Importing regular expressions
 import json                 # Importing json to read objects
@@ -18,7 +18,8 @@ BUILD = Path("build")
 # Templating elements
 TAG_RE = re.compile(r'{{\s*(.+?)\s*}}')     # Capture template tags and their content
 PATH_RE = re.compile(r'[\w./-]+')           # Verify a path has the expected symbols
-VAR_RE = re.compile(r'\{\s*(\w+|#)\s*\}')   # ets variables on smart templates
+VAR_RE = re.compile(r'{\s*(\w+|#)\s*}')     # Gets variables on smart templates
+TERNARY_RE = re.compile(r'{\?(\d+)(.*?)##(.*?)\?}', re.DOTALL)  # Matches terniaries
 
 
 #==== INNER COMPONENTS =====================================================
@@ -55,12 +56,32 @@ def expand_smart_tag(path, section):
     if not isinstance(items, list):
         raise Exception(f"Section {section} is not a valid iterable smart template array")
 
+    def resolve_conditionals(arr):
+        def pick_branch(match):
+            key = int(match.group(1))
+            if key >= len(arr):
+                sys.exit (f"Attempted to read a non-existent variable {key} in {private_path}")
+            if arr[key] != '':
+                return match.group(2).strip()
+            return match.group(3).strip()
+
+        output = []
+        cursor = 0
+        for match in TERNARY_RE.finditer(html_template):
+            output.append(html_template[cursor:match.start()])
+            output.append(pick_branch(match))
+            cursor = match.end()
+        output.append(html_template[cursor:])
+        return "".join(output)
+
+
     def render_item(idx, arr):
+        resolved_html = resolve_conditionals(arr)
         item_output = []
         cursor = 0
 
-        for match in VAR_RE.finditer(html_template):
-            item_output.append(html_template[cursor:match.start()])
+        for match in VAR_RE.finditer(resolved_html):
+            item_output.append(resolved_html[cursor:match.start()])
             key = match.group(1)
 
             if key == '#':
@@ -74,7 +95,7 @@ def expand_smart_tag(path, section):
             item_output.append(value)
             cursor = match.end()
 
-        item_output.append(html_template[cursor:])
+        item_output.append(resolved_html[cursor:])
         return ''.join(item_output)
 
     output = []
@@ -118,10 +139,10 @@ def web_build(args):
 
     start_time = time.time()
     print("Building static site...")
-    BUILD.mkdir(exist_ok=True)
     verbose=args.verbose
     compile_count = 0
     copy_count = 0
+    BUILD.mkdir(exist_ok=True)
 
     print("Compiling pages...")
     for page in PUBLIC.rglob("*.html"):
@@ -139,33 +160,35 @@ def web_build(args):
         if verbose: 
             print(f"Compile: {in_path}")
 
-    print("Copying assets...")
+    print("Linking assets...")
     for asset in PUBLIC.rglob("*"):
         if asset.is_file() and asset.suffix != '.html':
             in_path = asset.relative_to(PUBLIC)
             out_path = BUILD / in_path
             out_path.parent.mkdir(parents=True, exist_ok=True)
+
+            if out_path.exists() or out_path.is_symlink():
+                out_path.unlink()
     
-            out_path.write_bytes(asset.read_bytes())
+            out_path.hardlink_to(asset.resolve())
     
             copy_count += 1
             if verbose: 
-                print(f"Write: {out_path}")
+                print(f"Linked: {out_path}")
 
 
     end_time = time.time()
     timer = end_time - start_time
     if timer < 1:
-        print(f"Compiled {compile_count} files and copied {copy_count} assets into build/ in {timer*1000:.1f}ms")
+        print(f"Compiled {compile_count} files and linked {copy_count} assets into build/ in {timer*1000:.1f}ms")
     else:
-        print(f"Compiled {compile_count} files and copied {copy_count} assets into build/ in {timer:.2f}ms")
+        print(f"Compiled {compile_count} files and linked {copy_count} assets into build/ in {timer:.2f}ms")
 
 #==== CLI ==================================================================
 def main():
     parser = argparse.ArgumentParser(description="Static web compiler for PRODUCT_NAME")
     sub = parser.add_subparsers(dest="command", required=True)
     sub_build = sub.add_parser("build", help="Compile static website into build/")
-    sub_build.add_argument("-f", "--full", action="store_true", help="Forces a full compile rather than only overwriting files that changed")
     sub_build.add_argument("-v", "--verbose", action="store_true", help="Log additional output into the terminal")
     sub_build.set_defaults(func=web_build)
 

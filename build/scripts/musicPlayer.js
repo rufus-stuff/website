@@ -15,6 +15,7 @@ const musicPlayer = {
       if (slug) {
         track.addEventListener("click", (e) => {
           e.preventDefault();
+          e.stopPropagation();
           musicPlayer.play(slug)
         })
       }
@@ -26,6 +27,7 @@ const musicPlayer = {
 
   play (slug) {
     musicPlayer.player.iframe.src = `https://www.youtube-nocookie.com/embed/${slug}?autoplay=1&modestbranding=1&rel=0&playsinline=1`
+    rwm.window.minimizer(musicPlayer.player.app, true)
   },
 
   preview : (e, row, cover) => {

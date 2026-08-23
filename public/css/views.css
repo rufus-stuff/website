@@ -28,6 +28,8 @@ table.tracklist {
       background-color: lightblue;
       td:first-child:has(~ td:nth-child(2) a)::before { visibility: visible; }
     }
+    
+    &:has(td:nth-child(2) a) { cursor: pointer; }
   }
 }
 

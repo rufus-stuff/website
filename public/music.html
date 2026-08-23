@@ -11,6 +11,7 @@
   <div class="window" style="width:800px;">
     <div class="window-bar">
       <p>Music I listen to</p>
+      <button aria-label="Minimize window"></button>
     </div>
     <main class="window-view view-details-grid">
       <!-- List of music start -->
@@ -70,6 +71,55 @@
           </table>
         </article>
       </details>
+      <details name="music">
+        <summary>
+          <img src="resources/musicIcons/yelle.webp" alt="Yelle">
+        </summary>
+        <article>
+          <h3>Yelle</h3>
+          <p>It's been over 12 years since I discovered Yelle through a recommendation on a Sup3rfruit video... That takes me back! She's the queen of French electropop for me</p>
+          <h4>Fav tracks:</h4>
+          <table class="tracklist">
+            {{ list/tracklist#yelle }}
+          </table>
+        </article>
+      </details>
+
+      <div class="grid-category">
+        <h2>Chill</h2>
+        <p>Chill or lo-fi music, because I do vibe a lot with that.</p>
+      </div>
+
+      <div class="grid-category">
+        <h2>Girlies</h2>
+        <p>Girly pop.</p>
+      </div>
+      <details name="music">
+        <summary>
+          <img src="resources/musicIcons/carlyrj.webp" alt="Carly Rae Jepsen">
+        </summary>
+        <article>
+          <h3>Carly Rae Jepsen</h3>
+          <p>Carly</p>
+          <h4>Fav tracks:</h4>
+          <table class="tracklist">
+            {{ list/tracklist#carlyrj }}
+          </table>
+        </article>
+      </details>
+      <details name="music">
+        <summary>
+          <img src="resources/musicIcons/charlixcx.jpeg" alt="Charli xcx">
+        </summary>
+        <article>
+          <h3>Charli xcx</h3>
+          <p>I discovered Charli through "Selfish Girl", a track from the deluxe edition of CRASH and I really got into the vibe of that album. Later I didn't like brat at first but with the years I've learnt to love it</p>
+          <h4>Fav tracks:</h4>
+          <table class="tracklist">
+            {{ list/tracklist#charlixcx }}
+          </table>
+        </article>
+      </details>
 
       <!-- List of music end -->
     </main>
@@ -77,9 +127,10 @@
 
   <img id="coverPreviewer" alt="Album cover art">
 
-  <div class="window" id="app-player" style="width: 400px; bottom:4rem; right: 1rem;">
+  <div class="window minimized" id="app-player" style="width: 400px;">
     <div class="window-bar">
       <p>Music Player</p>
+      <button aria-label="Minimize window"></button>
     </div>
     <div class="window-view">
       <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;">
