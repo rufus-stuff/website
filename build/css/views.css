@@ -1,12 +1,12 @@
-:root {
-  --grid-size: 120px;
-}
-
 table.tracklist {
   border-collapse: collapse;
   border: none;
-  width: calc(100% - 6rem);
-  margin: 0 3rem;
+  width: calc(100% - 0.5rem);
+  margin: 0 0.25rem;
+
+  &:not(.active) {
+    display: none;
+  }
 
   tr {
     td:first-child {
@@ -25,7 +25,7 @@ table.tracklist {
     }
 
     &:hover{
-      background-color: lightblue;
+      background-color: silver;
       td:first-child:has(~ td:nth-child(2) a)::before { visibility: visible; }
     }
     
@@ -39,48 +39,30 @@ table.tracklist {
   gap: 8px;
   width: 100%;
 
-  /* Trick to make open entries use the full row. */
-  details:open, .grid-category { grid-column: 1/-1; }
-
   .grid-category {
+    grid-column: 1/-1;
     padding-bottom: 2px;
     border-bottom: 1px solid black;
   }
+}
 
-  details {
-    display: flex;
 
-    > summary {
-      list-style: none;
-      ::-webkit-details-marker { display: none; }
-      width: var(--grid-size);
-      height: var(--grid-size);
-      box-shadow: var(--border-bevel);
-      padding: 3px;
-      flex-shrink: 0;
+.playlist-header{
+  display: flex;
+  padding: 6px;
+  margin: 2px;
+  box-shadow: var(--border-bevel-pressed);
+  background-color: silver;
 
-      &:active{
-        box-shadow: var(--border-bevel-pressed);
-        img { filter: brightness(0.7) }
-      }
-
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    article {
-      margin-left: 8px;
-
-      &::after {
-        content: '';
-        display: block;
-        width: 100%;
-        border-bottom: 1px solid black;
-        margin-top: 8px;
-      }
-    }
+  #coverPreviewer {
+    width: 160px;
+    height: 160px;
+    background-color: silver;
+    flex-shrink: 0;
+    margin-inline-end: 8px;
   }
+}
+
+.artistProfile:not(.active) {
+  display: none;
 }

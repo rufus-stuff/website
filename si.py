@@ -7,6 +7,7 @@ import argparse             # We will need this to treat the script as a CLI
 import time                 # For calculating the time a compile step took
 import sys                  # Allows us to sys.exit and kill the process when needed
 from pathlib import Path    # Python's modern path manager
+from http.server import BaseHTTPRequestHandler, HTTPServer 
 
 
 #==== SETTINGS =============================================================
@@ -106,17 +107,14 @@ def expand_smart_tag(path, section):
 
 def expand_tag(path, section):
     if section:
-        return expand_smart_tag(path, section)
+        return render_file(expand_smart_tag(path, section))
     else:
         private_path = (PRIVATE/f"{path}.html").resolve()
         try:
-            return private_path.read_text()
+            return render_file(private_path.read_text())
         except Exception as e:
             sys.exit(f"Failed when attempting to access {private_path}")
 
-
-
-#==== MAIN COMMANDS ========================================================
 def render_file(content:str) -> str:
     output = []
     cursor = 0
@@ -129,6 +127,43 @@ def render_file(content:str) -> str:
 
     output.append(content[cursor:])
     return ''.join(output)
+
+class HTTPHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        path = self.path.lstrip('/') or 'index.html'
+        file_path = PUBLIC / path
+
+        if file_path.suffix != '.html':
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(file_path.read_bytes())
+            return
+
+        try:
+            output = render_file(file_path.read_text())
+            self.send_response(200)
+            self.end_headers()
+            self.wfile.write(output.encode())
+            return
+        except Exception as e:
+            self.send_response(500)
+            self.end_headers()
+            self.wfile.write(f"Internal error: {e}".encode())
+
+
+#==== MAIN COMMANDS ========================================================
+def web_serve(args):
+
+    server = HTTPServer(("localhost", args.port), HTTPHandler)
+    print(f"Server accessible on http://localhost:{args.port}")
+    print("Refresh to view changes, no build needed.")
+    print("Ctrl+C to stop server.")
+
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nServer stopped.")
+
 
 def web_build(args):
 
@@ -188,9 +223,14 @@ def web_build(args):
 def main():
     parser = argparse.ArgumentParser(description="Static web compiler for PRODUCT_NAME")
     sub = parser.add_subparsers(dest="command", required=True)
+
     sub_build = sub.add_parser("build", help="Compile static website into build/")
     sub_build.add_argument("-v", "--verbose", action="store_true", help="Log additional output into the terminal")
     sub_build.set_defaults(func=web_build)
+
+    sub_serve = sub.add_parser("serve", help="Start a dev server to view files without compiling")
+    sub_serve.add_argument("-p", "--port", type=int, default=3000, help="Serve to a specific port (3000 by default)")
+    sub_serve.set_defaults(func=web_serve)
 
     args = parser.parse_args()
 

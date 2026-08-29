@@ -14,76 +14,12 @@
       <button aria-label="Minimize window"></button>
     </div>
     <main class="window-view view-details-grid">
-      <!-- List of music start -->
 
       <div class="grid-category">
         <h2>Artists I love</h2>
         <p>Artists and groups I just can't get enough of</p>
       </div>
-
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/xg.webp" alt="XG">
-        </summary>
-        <article>
-          <h3>XG (Xtraordinary Genes)</h3>
-          <p>XG is a japanese group </p>
-          <table class="tracklist">
-            {{ list/tracklist#xg }}
-          </table>
-        </article>
-      </details>
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/hyelyn.webp" alt="Hyelyn Joo">
-        </summary>
-        <article>
-          <h3>Hyelyn Joo</h3>
-          <p>There is a lot of text here, I think this text is needed because the contents don't use up enough space if the paragraph doesn't claim it.</p>
-          <table class="tracklist">
-            {{ list/tracklist#hyelyn }}
-          </table>
-        </article>
-      </details>
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/orla.webp" alt="Orla Gartland">
-        </summary>
-        <article>
-          <h3>Orla Gartland</h3>
-          <p>Orla Gartland is a great artist from Ireland. I absolutely love her and I've been a part of her <a href="https://www.patreon.com/c/orlagartland/posts">Secret Demo Club</a> for a couple of years now!</p>
-          <h4>Fav tracks:</h4>
-          <table class="tracklist">
-            {{ list/tracklist#orla }}
-          </table>
-        </article>
-      </details>
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/agnes.png" alt="Agnes">
-        </summary>
-        <article>
-          <h3>Agnes</h3>
-          <p>Agnes Carlsson is a sweedish</p>
-          <h4>Fav tracks:</h4>
-          <table class="tracklist">
-            {{ list/tracklist#agnes }}
-          </table>
-        </article>
-      </details>
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/yelle.webp" alt="Yelle">
-        </summary>
-        <article>
-          <h3>Yelle</h3>
-          <p>It's been over 12 years since I discovered Yelle through a recommendation on a Sup3rfruit video... That takes me back! She's the queen of French electropop for me</p>
-          <h4>Fav tracks:</h4>
-          <table class="tracklist">
-            {{ list/tracklist#yelle }}
-          </table>
-        </article>
-      </details>
+      {{ list/artistButton#favorites }}
 
       <div class="grid-category">
         <h2>Chill</h2>
@@ -94,38 +30,26 @@
         <h2>Girlies</h2>
         <p>Girly pop.</p>
       </div>
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/carlyrj.webp" alt="Carly Rae Jepsen">
-        </summary>
-        <article>
-          <h3>Carly Rae Jepsen</h3>
-          <p>Carly</p>
-          <h4>Fav tracks:</h4>
-          <table class="tracklist">
-            {{ list/tracklist#carlyrj }}
-          </table>
-        </article>
-      </details>
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/charlixcx.jpeg" alt="Charli xcx">
-        </summary>
-        <article>
-          <h3>Charli xcx</h3>
-          <p>I discovered Charli through "Selfish Girl", a track from the deluxe edition of CRASH and I really got into the vibe of that album. Later I didn't like brat at first but with the years I've learnt to love it</p>
-          <h4>Fav tracks:</h4>
-          <table class="tracklist">
-            {{ list/tracklist#charlixcx }}
-          </table>
-        </article>
-      </details>
-
-      <!-- List of music end -->
+      {{ list/artistButton#girlies }}
     </main>
   </div>
 
-  <img id="coverPreviewer" alt="Album cover art">
+  
+  <div class="window minimized" id="app-explorer" style="min-width: 500px;">
+    <div class="window-bar">
+      <p>Playlist explorer</p>
+      <button aria-label="Minimize window"></button>
+    </div>
+    <div class="window-view">
+      <div class="playlist-header">
+        <img id="coverPreviewer" src="resources/albumArt/empty.jpg" alt="Album cover art">
+        {{ list/artistProfile#main }}
+      </div>
+      <div>
+        {{ list/artistPlaylist#main }}
+      </div>
+    </div>
+  </div>
 
   <div class="window minimized" id="app-player" style="width: 400px;">
     <div class="window-bar">
@@ -135,15 +59,15 @@
     <div class="window-view">
       <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;">
         <iframe
-                id="player-iframe"
-                width="100%"
-                height="100%"
-                src=""
-                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; clipboard-write"
-                allowfullscreen
-                playsinline
-                title="YouTube video player"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
+          id="player-iframe"
+          width="100%"
+          height="100%"
+          src=""
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; clipboard-write"
+          allowfullscreen
+          playsinline
+          title="YouTube video player"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;"
         ></iframe>
       </div>
     </div>

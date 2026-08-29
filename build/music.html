@@ -20,276 +20,256 @@
       <button aria-label="Minimize window"></button>
     </div>
     <main class="window-view view-details-grid">
-      <!-- List of music start -->
 
       <div class="grid-category">
         <h2>Artists I love</h2>
         <p>Artists and groups I just can't get enough of</p>
       </div>
+      <button class="image-button" onclick="musicPlayer.explorer.loadList(event, 'xg')">
+    <img src="resources/musicIcons/xg.webp" alt="XG">
+</button>
 
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/xg.webp" alt="XG">
-        </summary>
-        <article>
-          <h3>XG (Xtraordinary Genes)</h3>
-          <p>XG is a japanese group </p>
-          <table class="tracklist">
-            <tr data-link="cUfDOS2SINM" data-cover="xg_core.jpg">
+<button class="image-button" onclick="musicPlayer.explorer.loadList(event, 'hyelyn')">
+    <img src="resources/musicIcons/hyelyn.webp" alt="Hyelyn">
+</button>
+
+<button class="image-button" onclick="musicPlayer.explorer.loadList(event, 'orla')">
+    <img src="resources/musicIcons/orla.webp" alt="Orla Gartland">
+</button>
+
+<button class="image-button" onclick="musicPlayer.explorer.loadList(event, 'agnes')">
+    <img src="resources/musicIcons/agnes.png" alt="Agnes">
+</button>
+
+<button class="image-button" onclick="musicPlayer.explorer.loadList(event, 'yelle')">
+    <img src="resources/musicIcons/yelle.webp" alt="Yelle">
+</button>
+
+
+
+      <div class="grid-category">
+        <h2>Chill</h2>
+        <p>Chill or lo-fi music, because I do vibe a lot with that.</p>
+      </div>
+
+      <div class="grid-category">
+        <h2>Girlies</h2>
+        <p>Girly pop.</p>
+      </div>
+      <button class="image-button" onclick="musicPlayer.explorer.loadList(event, 'carlyrj')">
+    <img src="resources/musicIcons/carlyrj.webp" alt="Carly Rae Jepsen">
+</button>
+
+<button class="image-button" onclick="musicPlayer.explorer.loadList(event, 'charlixcx')">
+    <img src="resources/musicIcons/charlixcx.jpeg" alt="Charli xcx">
+</button>
+
+<button class="image-button" onclick="musicPlayer.explorer.loadList(event, 'ariana')">
+    <img src="resources/musicIcons/ariana.jpg" alt="Ariana Grande">
+</button>
+
+<button class="image-button" onclick="musicPlayer.explorer.loadList(event, 'carolinep')">
+    <img src="resources/musicIcons/polachek.jpg" alt="Caroline Polachek">
+</button>
+
+
+    </main>
+  </div>
+
+  
+  <div class="window minimized" id="app-explorer" style="min-width: 500px;">
+    <div class="window-bar">
+      <p>Playlist explorer</p>
+      <button aria-label="Minimize window"></button>
+    </div>
+    <div class="window-view">
+      <div class="playlist-header">
+        <img id="coverPreviewer" src="resources/albumArt/empty.jpg" alt="Album cover art">
+        <div class="artistProfile" id="artistProfile-ariana">
+    <h2>Ariana Grande</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-agnes">
+    <h2>Agnes</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-carlyrj">
+    <h2>Carly Rae Jepsen</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-carolinep">
+    <h2>Caroline Polachek</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-charlixcx">
+    <h2>Charli xcx</h2>
+    <p>I discovered Charli through 'Selfish Girl', a track from the deluxe edition of CRASH and I really got into the vibe of that album. Later I didn't like brat at first but with the years I've learnt to love it</p>
+</div>
+
+<div class="artistProfile" id="artistProfile-dualipa">
+    <h2>Dua Lipa</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-eleni">
+    <h2>Eleni Foureira</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-hyelyn">
+    <h2>Hyelyn Joo</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-msatti">
+    <h2>Marina Satti</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-limperatrice">
+    <h2>L'imperatrice</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-orla">
+    <h2>Orla Gartland</h2>
+    <p>Orla Gartland is a great artist from Ireland. I absolutely love her and I've been a part of her <a href='https://www.patreon.com/c/orlagartland/posts'>Secret Demo Club</a> for a couple of years now!</p>
+</div>
+
+<div class="artistProfile" id="artistProfile-paradis">
+    <h2>Paradis</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-rupaul">
+    <h2>RuPaul</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-tovelo">
+    <h2>Tove Lo</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-xg">
+    <h2>Xtraordinary Genes</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-yelle">
+    <h2>Yelle</h2>
+    <p>It's been over 12 years since I discovered Yelle through a recommendation on a Sup3rfruit video... That takes me back! She's the queen of French electropop for me</p>
+</div>
+
+
+      </div>
+      <div>
+        <table class="tracklist" id="artistTracklist-ariana">
+    <tr data-link="WZNr8nPFJVw" data-cover="ag_p.jpg">
     <td>1</td>
-    <td><a href="https://youtu.be/cUfDOS2SINM">HYPNOTIZE</a></td>
-    <td>2:51</td>
-</tr>
-
-<tr data-link="8cEdndsuzSE" data-cover="xg_gala.jpg">
-    <td>2</td>
-    <td><a href="https://youtu.be/8cEdndsuzSE">GALA</a></td>
-    <td>3:48</td>
-</tr>
-
-<tr data-link="QiYOkmrI1jg" data-cover="xg_iykyk.jpg">
-    <td>3</td>
-    <td><a href="https://youtu.be/QiYOkmrI1jg">IYKYK</a></td>
-    <td>3:00</td>
-</tr>
-
-<tr data-link="-XrrMwG8jRI" data-cover="xg_core.jpg">
-    <td>4</td>
-    <td><a href="https://youtu.be/-XrrMwG8jRI">4 SEASONS</a></td>
-    <td>4:36</td>
-</tr>
-
-<tr data-link="MtfESY2lzAs" data-cover="xg_core.jpg">
-    <td>5</td>
-    <td><a href="https://youtu.be/MtfESY2lzAs">PS118</a></td>
-    <td>2:35</td>
-</tr>
-
-<tr data-link="kd5LJ4r-vEY" data-cover="xg_sar.jpg">
-    <td>6</td>
-    <td><a href="https://youtu.be/kd5LJ4r-vEY">SOMETHING AINT RIGHT</a></td>
-    <td>3:11</td>
-</tr>
-
-<tr data-link="5sT20edl02I" data-cover="xg_wup.jpg">
-    <td>7</td>
-    <td><a href="https://youtu.be/5sT20edl02I">WOKE UP</a></td>
-    <td>3:09</td>
-</tr>
-
-<tr data-link="RhDnRE7nciw" data-cover="xg_ndna.jpg">
-    <td>8</td>
-    <td><a href="https://youtu.be/RhDnRE7nciw">HESONOO + X-GENE</a></td>
-    <td>2:20</td>
-</tr>
-
-<tr data-link="rGqEuk8Om-4" data-cover="xg_awe.jpg">
-    <td>9</td>
-    <td><a href="https://youtu.be/rGqEuk8Om-4">HOWLING</a></td>
-    <td>3:09</td>
-</tr>
-
-<tr data-link="0EC4m17bwLI" data-cover="xg_ggvng.jpg">
-    <td>10</td>
-    <td><a href="https://youtu.be/0EC4m17bwLI">GRL GVNG</a></td>
-    <td>3:09</td>
-</tr>
-
-<tr data-link="gVTu0BCDhmA" data-cover="xg_itl.jpg">
-    <td>11</td>
-    <td><a href="https://youtu.be/gVTu0BCDhmA">IS THIS LOVE</a></td>
-    <td>2:36</td>
-</tr>
-
-<tr data-link="BydbhAzmAzg" data-cover="xg_itr.jpg">
-    <td>12</td>
-    <td><a href="https://youtu.be/BydbhAzmAzg">IN THE RAIN</a></td>
-    <td>3:09</td>
-</tr>
-
-<tr data-link="WI5Zjz_07dc" data-cover="xg_core.jpg">
-    <td>13</td>
-    <td><a href="https://youtu.be/WI5Zjz_07dc">TAKE MY BREATH</a></td>
+    <td><a href="https://youtu.be/WZNr8nPFJVw">bad thing (bunny hop)</a></td>
     <td>3:28</td>
 </tr>
 
-
-          </table>
-        </article>
-      </details>
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/hyelyn.webp" alt="Hyelyn Joo">
-        </summary>
-        <article>
-          <h3>Hyelyn Joo</h3>
-          <p>There is a lot of text here, I think this text is needed because the contents don't use up enough space if the paragraph doesn't claim it.</p>
-          <table class="tracklist">
-            <tr data-link="1KX9Z9TFoos" data-cover="hj_stereo.jpg">
-    <td>1</td>
-    <td><a href="https://youtu.be/1KX9Z9TFoos">Busy Boy</a></td>
-    <td>3:15</td>
+<tr data-link="_lKbPBS5HEQ" data-cover="ag_p.jpg">
+    <td>2</td>
+    <td><a href="https://youtu.be/_lKbPBS5HEQ">oh well</a></td>
+    <td>3:16</td>
 </tr>
 
-<tr data-link="0vHcboQ9BFo" data-cover="hj_remake.jpg">
-    <td>2</td>
-    <td><a href="https://youtu.be/0vHcboQ9BFo">Hair Cut (Re-Make)</a></td>
+<tr data-link="PlaiDnJyabE" data-cover="ag_es.jpg">
+    <td>3</td>
+    <td><a href="https://youtu.be/PlaiDnJyabE">bye</a></td>
+    <td>2:45</td>
+</tr>
+
+<tr data-link="x1XIJM6spaE" data-cover="ag_esd.jpg">
+    <td>4</td>
+    <td><a href="https://youtu.be/x1XIJM6spaE">twilight zone</a></td>
+    <td>3:18</td>
+</tr>
+
+<tr data-link="eB6txyhHFG4" data-cover="ag_ya.jpg">
+    <td>5</td>
+    <td><a href="https://youtu.be/eB6txyhHFG4">yes, and?</a></td>
+    <td>3:35</td>
+</tr>
+
+<tr data-link="ffxKSjUwKdU" data-cover="ag_ntltc.png">
+    <td>6</td>
+    <td><a href="https://youtu.be/ffxKSjUwKdU">no tears left to cry</a></td>
     <td>3:26</td>
 </tr>
 
-<tr data-link="8PuGEz1ly_4" data-cover="hj_remake.jpg">
-    <td>3</td>
-    <td><a href="https://youtu.be/8PuGEz1ly_4">Busy Boy (Re-Make)</a></td>
-    <td>4:15</td>
-</tr>
-
-<tr data-link="6bn0dlv7FxY" data-cover="hj_remake.jpg">
-    <td>4</td>
-    <td><a href="https://youtu.be/6bn0dlv7FxY">Crazy (Re-Make)</a></td>
-    <td>3:52</td>
-</tr>
-
-<tr data-link="m8WEHubWSog" data-cover="hj_cool.jpg">
-    <td>5</td>
-    <td><a href="https://youtu.be/m8WEHubWSog">Kiss!</a></td>
-    <td>3:31</td>
-</tr>
-
-<tr data-link="pvGFtV6c354" data-cover="hj_stereo.jpg">
-    <td>6</td>
-    <td><a href="https://youtu.be/pvGFtV6c354">Everything You Know</a></td>
-    <td>3:43</td>
-</tr>
-
-<tr data-link="ltSdKuJfn5k" data-cover="hj_stereo.jpg">
+<tr data-link="nw8zdCwp3k4" data-cover="ag_dw.jpg">
     <td>7</td>
-    <td><a href="https://youtu.be/ltSdKuJfn5k">Green Tea</a></td>
-    <td>1:25</td>
+    <td><a href="https://youtu.be/nw8zdCwp3k4">Greedy</a></td>
+    <td>3:35</td>
 </tr>
 
-<tr data-link="3bkBRoYN7wc" data-cover="hj_hcut.jpg">
+<tr data-link="uKqRAC-JNOM" data-cover="ag_tun.jpg">
     <td>8</td>
-    <td><a href="https://youtu.be/3bkBRoYN7wc">Hair Cut</a></td>
-    <td>3:06</td>
+    <td><a href="https://youtu.be/uKqRAC-JNOM">bloodline</a></td>
+    <td>3:37</td>
 </tr>
 
-
-          </table>
-        </article>
-      </details>
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/orla.webp" alt="Orla Gartland">
-        </summary>
-        <article>
-          <h3>Orla Gartland</h3>
-          <p>Orla Gartland is a great artist from Ireland. I absolutely love her and I've been a part of her <a href="https://www.patreon.com/c/orlagartland/posts">Secret Demo Club</a> for a couple of years now!</p>
-          <h4>Fav tracks:</h4>
-          <table class="tracklist">
-            <tr data-link="FfXHfP9d7OA" data-cover="og_flatline.jpg">
-    <td>1</td>
-    <td><a href="https://youtu.be/FfXHfP9d7OA">Flatline</a></td>
-    <td>3:22</td>
-</tr>
-
-<tr data-link="1pCUJOH9BCE" data-cover="og_enah.jpg">
-    <td>2</td>
-    <td><a href="https://youtu.be/1pCUJOH9BCE">Everybody Needs a Hero</a></td>
-    <td>4:20</td>
-</tr>
-
-<tr data-link="rKWJICaKYGY" data-cover="og_mlyou.jpg">
-    <td>3</td>
-    <td><a href="https://youtu.be/rKWJICaKYGY">More Like You</a></td>
-    <td>3:41</td>
-</tr>
-
-<tr data-link="MEkPfGSatE" data-cover="og_thehit.jpg">
-    <td>4</td>
-    <td><a href="https://youtu.be/MEkPfGSatE">The hit</a></td>
-    <td>3:31</td>
-</tr>
-
-<tr data-link="1_pICv1FxnY" data-cover="og_ditm.jpg">
-    <td>5</td>
-    <td><a href="https://youtu.be/1_pICv1FxnY">Did It to Myself</a></td>
+<tr data-link="kHLHSlExFis" data-cover="ag_giaw.png">
+    <td>9</td>
+    <td><a href="https://youtu.be/kHLHSlExFis">God is a woman</a></td>
     <td>3:17</td>
 </tr>
 
-<tr data-link="6yRN-W11ZCY" data-cover="og_enah.jpg">
-    <td>6</td>
-    <td><a href="https://youtu.be/6yRN-W11ZCY">SOUND OF LETTING GO</a></td>
-    <td>2:50</td>
-</tr>
-
-<tr data-link="bonEOAMGkqw" data-cover="og_woti.jpg">
-    <td>7</td>
-    <td><a href="https://youtu.be/bonEOAMGkqw">Things That I've Learned</a></td>
-    <td>2:35</td>
-</tr>
-
-<tr data-link="LgAvGT28lqc" data-cover="og_woti.jpg">
-    <td>8</td>
-    <td><a href="https://youtu.be/LgAvGT28lqc">You're Not Special, Babe</a></td>
-    <td>3:24</td>
-</tr>
-
-<tr data-link="3OdS2Vf0QL0" data-cover="og_fseason.jpg">
-    <td>9</td>
-    <td><a href="https://youtu.be/3OdS2Vf0QL0">oh GOD</a></td>
-    <td>2:48</td>
-</tr>
-
-<tr data-link="GITYxF3iRgs" data-cover="og_dymind.jpg">
+<tr data-link="hKwizc5nsWY" data-cover="ag_sn.jpg">
     <td>10</td>
-    <td><a href="https://youtu.be/GITYxF3iRgs">Do You Mind?</a></td>
-    <td>3:38</td>
+    <td><a href="https://youtu.be/hKwizc5nsWY">supernatural</a></td>
+    <td>2:43</td>
 </tr>
 
-<tr data-link="MewlsAFfD-k" data-cover="og_lttp.jpg">
+<tr data-link="eBAHqRnSgRw" data-cover="ag_dw.jpg">
     <td>11</td>
-    <td><a href="https://youtu.be/MewlsAFfD-k">Late to the Party (feat. Declan McKenna)</a></td>
-    <td>3:36</td>
+    <td><a href="https://youtu.be/eBAHqRnSgRw">Be Alright</a></td>
+    <td>2:59</td>
 </tr>
 
-<tr data-link="" data-cover="og_sdc.png">
+<tr data-link="L8eRzOYhLuw" data-cover="ag_bf.jpg">
     <td>12</td>
-    <td>Madison (demo)</td>
-    <td>3:44</td>
+    <td><a href="https://youtu.be/L8eRzOYhLuw">Break Free (feat. Zedd)</a></td>
+    <td>3:35</td>
 </tr>
 
-<tr data-link="o4ZdAR9S-Tg" data-cover="og_woti.jpg">
+<tr data-link="iS1g8G_njx8" data-cover="ag_p.png">
     <td>13</td>
-    <td><a href="https://youtu.be/o4ZdAR9S-Tg">Bloodline / Difficult Things</a></td>
-    <td>4:23</td>
+    <td><a href="https://youtu.be/iS1g8G_njx8">Problem (feat. Iggy Azalea)</a></td>
+    <td>3:14</td>
 </tr>
 
-<tr data-link="eUoPW_7jLDA" data-cover="og_woti.jpg">
+<tr data-link="hXU4P6j3TNY" data-cover="ag_s.jpg">
     <td>14</td>
-    <td><a href="https://youtu.be/eUoPW_7jLDA">Codependency</a></td>
-    <td>3:12</td>
+    <td><a href="https://youtu.be/hXU4P6j3TNY">get well soon</a></td>
+    <td>5:22</td>
 </tr>
 
-<tr data-link="9e_DcHF918w" data-cover="og_fio.jpg">
+<tr data-link="dS_HLHozs1E" data-cover="ag_es.jpg">
     <td>15</td>
-    <td><a href="https://youtu.be/9e_DcHF918w">Figure It Out</a></td>
-    <td>3:21</td>
+    <td><a href="https://youtu.be/dS_HLHozs1E">eternal sunshine</a></td>
+    <td>3:30</td>
+</tr>
+
+<tr data-link="k7SDstVAD78" data-cover="ag_p.jpg">
+    <td>16</td>
+    <td><a href="https://youtu.be/k7SDstVAD78">nowhere, nobody</a></td>
+    <td>2:52</td>
 </tr>
 
 
-          </table>
-        </article>
-      </details>
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/agnes.png" alt="Agnes">
-        </summary>
-        <article>
-          <h3>Agnes</h3>
-          <p>Agnes Carlsson is a sweedish</p>
-          <h4>Fav tracks:</h4>
-          <table class="tracklist">
-            <tr data-link="rM_mnQOdr54" data-cover="ag_trance.jpg">
+</table>
+
+<table class="tracklist" id="artistTracklist-agnes">
+    <tr data-link="rM_mnQOdr54" data-cover="ag_trance.jpg">
     <td>1</td>
     <td><a href="https://youtu.be/rM_mnQOdr54">I Trance</a></td>
     <td>4:23</td>
@@ -380,138 +360,10 @@
 </tr>
 
 
-          </table>
-        </article>
-      </details>
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/yelle.webp" alt="Yelle">
-        </summary>
-        <article>
-          <h3>Yelle</h3>
-          <p>It's been over 12 years since I discovered Yelle through a recommendation on a Sup3rfruit video... That takes me back! She's the queen of French electropop for me</p>
-          <h4>Fav tracks:</h4>
-          <table class="tracklist">
-            <tr data-link="13o1i-cgTOA" data-cover="yl_cf.jpg">
-    <td>1</td>
-    <td><a href="https://youtu.be/13o1i-cgTOA">Complètement fou</a></td>
-    <td>3:51</td>
-</tr>
+</table>
 
-<tr data-link="YyaGPUu4uiU" data-cover="yl_jte.jpg">
-    <td>2</td>
-    <td><a href="https://youtu.be/YyaGPUu4uiU">Je t'aime encore</a></td>
-    <td>3:35</td>
-</tr>
-
-<tr data-link="5BIpHulB1X8" data-cover="yl_cf.jpg">
-    <td>3</td>
-    <td><a href="https://youtu.be/5BIpHulB1X8">Florence en Italie</a></td>
-    <td>4:14</td>
-</tr>
-
-<tr data-link="5c-GeBqUgAA" data-cover="yl_cue.jpg">
-    <td>4</td>
-    <td><a href="https://youtu.be/5c-GeBqUgAA">Comme un enfant</a></td>
-    <td>4:14</td>
-</tr>
-
-<tr data-link="344XbWk3GkQ" data-cover="yl_ldv.jpg">
-    <td>5</td>
-    <td><a href="https://youtu.be/344XbWk3GkQ">Mon beau chagrin</a></td>
-    <td>2:14</td>
-</tr>
-
-<tr data-link="eoWK4rV3INY" data-cover="yl_omg.jpg">
-    <td>6</td>
-    <td><a href="https://youtu.be/eoWK4rV3INY">OMG!!!</a></td>
-    <td>3:08</td>
-</tr>
-
-<tr data-link="DMeyvg1M52k" data-cover="yl_iem.jpg">
-    <td>7</td>
-    <td><a href="https://youtu.be/DMeyvg1M52k">Ici & Maintenant (Here & Now)</a></td>
-    <td>3:10</td>
-</tr>
-
-<tr data-link="sE1rV4iLGto" data-cover="yl_n.jpg">
-    <td>8</td>
-    <td><a href="https://youtu.be/sE1rV4iLGto">Noir (Radio edit)</a></td>
-    <td>2:42</td>
-</tr>
-
-<tr data-link="rBhjd3R8Sps" data-cover="yl_cf.jpg">
-    <td>9</td>
-    <td><a href="https://youtu.be/rBhjd3R8Sps">Nuit de baise I</a></td>
-    <td>2:15</td>
-</tr>
-
-<tr data-link="W_WxFLcW8jY" data-cover="yl_cf.jpg">
-    <td>10</td>
-    <td><a href="https://youtu.be/W_WxFLcW8jY">Nuit de baise II</a></td>
-    <td>1:19</td>
-</tr>
-
-<tr data-link="RJ3OcSdiNIQ" data-cover="yl_ldv.jpg">
-    <td>11</td>
-    <td><a href="https://youtu.be/RJ3OcSdiNIQ">Un million</a></td>
-    <td>4:04</td>
-</tr>
-
-<tr data-link="AOQZNHueNQQ" data-cover="yl_romeo.jpg">
-    <td>12</td>
-    <td><a href="https://youtu.be/AOQZNHueNQQ">Romeo</a></td>
-    <td>3:30</td>
-</tr>
-
-<tr data-link="9wvhqdyi8xk" data-cover="yl_cf.jpg">
-    <td>13</td>
-    <td><a href="https://youtu.be/9wvhqdyi8xk">Bouquet Final</a></td>
-    <td>4:14</td>
-</tr>
-
-<tr data-link="Neqp_R-xAYs" data-cover="yl_ip.jpg">
-    <td>14</td>
-    <td><a href="https://youtu.be/Neqp_R-xAYs">Interpassion</a></td>
-    <td>3:08</td>
-</tr>
-
-<tr data-link="Ksm9yijuM7E" data-cover="yl_pu.jpg">
-    <td>15</td>
-    <td><a href="https://youtu.be/Ksm9yijuM7E">85A</a></td>
-    <td>2:29</td>
-</tr>
-
-<tr data-link="iFbirXS8zwQ" data-cover="yl_pu.jpg">
-    <td>16</td>
-    <td><a href="https://youtu.be/iFbirXS8zwQ">Mal poli</a></td>
-    <td>2:55</td>
-</tr>
-
-
-          </table>
-        </article>
-      </details>
-
-      <div class="grid-category">
-        <h2>Chill</h2>
-        <p>Chill or lo-fi music, because I do vibe a lot with that.</p>
-      </div>
-
-      <div class="grid-category">
-        <h2>Girlies</h2>
-        <p>Girly pop.</p>
-      </div>
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/carlyrj.webp" alt="Carly Rae Jepsen">
-        </summary>
-        <article>
-          <h3>Carly Rae Jepsen</h3>
-          <p>Carly</p>
-          <h4>Fav tracks:</h4>
-          <table class="tracklist">
-            <tr data-link="1E-dNouUSPM" data-cover="crj_tlnt.jpg">
+<table class="tracklist" id="artistTracklist-carlyrj">
+    <tr data-link="1E-dNouUSPM" data-cover="crj_tlnt.jpg">
     <td>1</td>
     <td><a href="https://youtu.be/1E-dNouUSPM">Bad Thing Twice</a></td>
     <td>3:14</td>
@@ -608,19 +460,74 @@
 </tr>
 
 
-          </table>
-        </article>
-      </details>
-      <details name="music">
-        <summary>
-          <img src="resources/musicIcons/charlixcx.jpeg" alt="Charli xcx">
-        </summary>
-        <article>
-          <h3>Charli xcx</h3>
-          <p>I discovered Charli through "Selfish Girl", a track from the deluxe edition of CRASH and I really got into the vibe of that album. Later I didn't like brat at first but with the years I've learnt to love it</p>
-          <h4>Fav tracks:</h4>
-          <table class="tracklist">
-            <tr data-link="0q3K6FPzY18" data-cover="xcx_gscl.jpeg">
+</table>
+
+<table class="tracklist" id="artistTracklist-carolinep">
+    <tr data-link="-YBP-D6vQIA" data-cover="cp_ss.jpg">
+    <td>1</td>
+    <td><a href="https://youtu.be/-YBP-D6vQIA">Sunset</a></td>
+    <td>2:42</td>
+</tr>
+
+<tr data-link="hxgcz_6GKX0" data-cover="cp_wtmi.jpg">
+    <td>2</td>
+    <td><a href="https://youtu.be/hxgcz_6GKX0">Welcome To My Island</a></td>
+    <td>3:52</td>
+</tr>
+
+<tr data-link="sn3cHUtNZKo" data-cover="cp_shyhmf.jpg">
+    <td>3</td>
+    <td><a href="https://youtu.be/sn3cHUtNZKo">So Hot You're Hurting My Feelings</a></td>
+    <td>3:03</td>
+</tr>
+
+<tr data-link="h_V2ccs_Urk" data-cover="cp_biar.jpg">
+    <td>4</td>
+    <td><a href="https://youtu.be/h_V2ccs_Urk">Bunny Is a Rider</a></td>
+    <td>3:14</td>
+</tr>
+
+<tr data-link="gDdrk6AKeP8" data-cover="cp_diwttiye.jpg">
+    <td>5</td>
+    <td><a href="https://youtu.be/gDdrk6AKeP8">Coma</a></td>
+    <td>5:45</td>
+</tr>
+
+<tr data-link="g_VgkkURF_w" data-cover="cp_oot.jpg">
+    <td>6</td>
+    <td><a href="https://youtu.be/g_VgkkURF_w">Ocean of Tears</a></td>
+    <td>3:25</td>
+</tr>
+
+<tr data-link="UX5ahM24o8A" data-cover="cp_d.jpg">
+    <td>7</td>
+    <td><a href="https://youtu.be/UX5ahM24o8A">Dang</a></td>
+    <td>2:44</td>
+</tr>
+
+<tr data-link="4zEQJrggKgk" data-cover="cp_b.jpg">
+    <td>8</td>
+    <td><a href="https://youtu.be/4zEQJrggKgk">Billions</a></td>
+    <td>4:57</td>
+</tr>
+
+<tr data-link="C4b3NR4JqnQ" data-cover="cp_p.jpg">
+    <td>9</td>
+    <td><a href="https://youtu.be/C4b3NR4JqnQ">Pang</a></td>
+    <td> 3:33</td>
+</tr>
+
+<tr data-link="qd4gyWC3SzE" data-cover="cp_diwttiy.jpg">
+    <td>10</td>
+    <td><a href="https://youtu.be/qd4gyWC3SzE">Fly To You (feat. Grimes and Dido)</a></td>
+    <td>4:05</td>
+</tr>
+
+
+</table>
+
+<table class="tracklist" id="artistTracklist-charlixcx">
+    <tr data-link="0q3K6FPzY18" data-cover="xcx_gscl.jpeg">
     <td>1</td>
     <td><a href="https://youtu.be/0q3K6FPzY18">Girl, so confusing (feat. Lorde)</a></td>
     <td>3:16</td>
@@ -723,15 +630,368 @@
 </tr>
 
 
-          </table>
-        </article>
-      </details>
+</table>
 
-      <!-- List of music end -->
-    </main>
+<table class="tracklist" id="artistTracklist-dualipa">
+    
+</table>
+
+<table class="tracklist" id="artistTracklist-eleni">
+    
+</table>
+
+<table class="tracklist" id="artistTracklist-hyelyn">
+    <tr data-link="1KX9Z9TFoos" data-cover="hj_stereo.jpg">
+    <td>1</td>
+    <td><a href="https://youtu.be/1KX9Z9TFoos">Busy Boy</a></td>
+    <td>3:15</td>
+</tr>
+
+<tr data-link="0vHcboQ9BFo" data-cover="hj_remake.jpg">
+    <td>2</td>
+    <td><a href="https://youtu.be/0vHcboQ9BFo">Hair Cut (Re-Make)</a></td>
+    <td>3:26</td>
+</tr>
+
+<tr data-link="8PuGEz1ly_4" data-cover="hj_remake.jpg">
+    <td>3</td>
+    <td><a href="https://youtu.be/8PuGEz1ly_4">Busy Boy (Re-Make)</a></td>
+    <td>4:15</td>
+</tr>
+
+<tr data-link="6bn0dlv7FxY" data-cover="hj_remake.jpg">
+    <td>4</td>
+    <td><a href="https://youtu.be/6bn0dlv7FxY">Crazy (Re-Make)</a></td>
+    <td>3:52</td>
+</tr>
+
+<tr data-link="m8WEHubWSog" data-cover="hj_cool.jpg">
+    <td>5</td>
+    <td><a href="https://youtu.be/m8WEHubWSog">Kiss!</a></td>
+    <td>3:31</td>
+</tr>
+
+<tr data-link="pvGFtV6c354" data-cover="hj_stereo.jpg">
+    <td>6</td>
+    <td><a href="https://youtu.be/pvGFtV6c354">Everything You Know</a></td>
+    <td>3:43</td>
+</tr>
+
+<tr data-link="ltSdKuJfn5k" data-cover="hj_stereo.jpg">
+    <td>7</td>
+    <td><a href="https://youtu.be/ltSdKuJfn5k">Green Tea</a></td>
+    <td>1:25</td>
+</tr>
+
+<tr data-link="3bkBRoYN7wc" data-cover="hj_hcut.jpg">
+    <td>8</td>
+    <td><a href="https://youtu.be/3bkBRoYN7wc">Hair Cut</a></td>
+    <td>3:06</td>
+</tr>
+
+
+</table>
+
+<table class="tracklist" id="artistTracklist-msatti">
+    
+</table>
+
+<table class="tracklist" id="artistTracklist-limperatrice">
+    
+</table>
+
+<table class="tracklist" id="artistTracklist-orla">
+    <tr data-link="FfXHfP9d7OA" data-cover="og_flatline.jpg">
+    <td>1</td>
+    <td><a href="https://youtu.be/FfXHfP9d7OA">Flatline</a></td>
+    <td>3:22</td>
+</tr>
+
+<tr data-link="1pCUJOH9BCE" data-cover="og_enah.jpg">
+    <td>2</td>
+    <td><a href="https://youtu.be/1pCUJOH9BCE">Everybody Needs a Hero</a></td>
+    <td>4:20</td>
+</tr>
+
+<tr data-link="rKWJICaKYGY" data-cover="og_mlyou.jpg">
+    <td>3</td>
+    <td><a href="https://youtu.be/rKWJICaKYGY">More Like You</a></td>
+    <td>3:41</td>
+</tr>
+
+<tr data-link="MEkPfGSatE" data-cover="og_thehit.jpg">
+    <td>4</td>
+    <td><a href="https://youtu.be/MEkPfGSatE">The hit</a></td>
+    <td>3:31</td>
+</tr>
+
+<tr data-link="1_pICv1FxnY" data-cover="og_ditm.jpg">
+    <td>5</td>
+    <td><a href="https://youtu.be/1_pICv1FxnY">Did It to Myself</a></td>
+    <td>3:17</td>
+</tr>
+
+<tr data-link="6yRN-W11ZCY" data-cover="og_enah.jpg">
+    <td>6</td>
+    <td><a href="https://youtu.be/6yRN-W11ZCY">SOUND OF LETTING GO</a></td>
+    <td>2:50</td>
+</tr>
+
+<tr data-link="bonEOAMGkqw" data-cover="og_woti.jpg">
+    <td>7</td>
+    <td><a href="https://youtu.be/bonEOAMGkqw">Things That I've Learned</a></td>
+    <td>2:35</td>
+</tr>
+
+<tr data-link="LgAvGT28lqc" data-cover="og_woti.jpg">
+    <td>8</td>
+    <td><a href="https://youtu.be/LgAvGT28lqc">You're Not Special, Babe</a></td>
+    <td>3:24</td>
+</tr>
+
+<tr data-link="3OdS2Vf0QL0" data-cover="og_fseason.jpg">
+    <td>9</td>
+    <td><a href="https://youtu.be/3OdS2Vf0QL0">oh GOD</a></td>
+    <td>2:48</td>
+</tr>
+
+<tr data-link="GITYxF3iRgs" data-cover="og_dymind.jpg">
+    <td>10</td>
+    <td><a href="https://youtu.be/GITYxF3iRgs">Do You Mind?</a></td>
+    <td>3:38</td>
+</tr>
+
+<tr data-link="MewlsAFfD-k" data-cover="og_lttp.jpg">
+    <td>11</td>
+    <td><a href="https://youtu.be/MewlsAFfD-k">Late to the Party (feat. Declan McKenna)</a></td>
+    <td>3:36</td>
+</tr>
+
+<tr data-link="" data-cover="og_sdc.png">
+    <td>12</td>
+    <td>Madison (demo)</td>
+    <td>3:44</td>
+</tr>
+
+<tr data-link="o4ZdAR9S-Tg" data-cover="og_woti.jpg">
+    <td>13</td>
+    <td><a href="https://youtu.be/o4ZdAR9S-Tg">Bloodline / Difficult Things</a></td>
+    <td>4:23</td>
+</tr>
+
+<tr data-link="eUoPW_7jLDA" data-cover="og_woti.jpg">
+    <td>14</td>
+    <td><a href="https://youtu.be/eUoPW_7jLDA">Codependency</a></td>
+    <td>3:12</td>
+</tr>
+
+<tr data-link="9e_DcHF918w" data-cover="og_fio.jpg">
+    <td>15</td>
+    <td><a href="https://youtu.be/9e_DcHF918w">Figure It Out</a></td>
+    <td>3:21</td>
+</tr>
+
+
+</table>
+
+<table class="tracklist" id="artistTracklist-paradis">
+    
+</table>
+
+<table class="tracklist" id="artistTracklist-rupaul">
+    
+</table>
+
+<table class="tracklist" id="artistTracklist-tovelo">
+    
+</table>
+
+<table class="tracklist" id="artistTracklist-xg">
+    <tr data-link="cUfDOS2SINM" data-cover="xg_core.jpg">
+    <td>1</td>
+    <td><a href="https://youtu.be/cUfDOS2SINM">HYPNOTIZE</a></td>
+    <td>2:51</td>
+</tr>
+
+<tr data-link="8cEdndsuzSE" data-cover="xg_gala.jpg">
+    <td>2</td>
+    <td><a href="https://youtu.be/8cEdndsuzSE">GALA</a></td>
+    <td>3:48</td>
+</tr>
+
+<tr data-link="QiYOkmrI1jg" data-cover="xg_iykyk.jpg">
+    <td>3</td>
+    <td><a href="https://youtu.be/QiYOkmrI1jg">IYKYK</a></td>
+    <td>3:00</td>
+</tr>
+
+<tr data-link="-XrrMwG8jRI" data-cover="xg_core.jpg">
+    <td>4</td>
+    <td><a href="https://youtu.be/-XrrMwG8jRI">4 SEASONS</a></td>
+    <td>4:36</td>
+</tr>
+
+<tr data-link="MtfESY2lzAs" data-cover="xg_core.jpg">
+    <td>5</td>
+    <td><a href="https://youtu.be/MtfESY2lzAs">PS118</a></td>
+    <td>2:35</td>
+</tr>
+
+<tr data-link="kd5LJ4r-vEY" data-cover="xg_sar.jpg">
+    <td>6</td>
+    <td><a href="https://youtu.be/kd5LJ4r-vEY">SOMETHING AINT RIGHT</a></td>
+    <td>3:11</td>
+</tr>
+
+<tr data-link="5sT20edl02I" data-cover="xg_wup.jpg">
+    <td>7</td>
+    <td><a href="https://youtu.be/5sT20edl02I">WOKE UP</a></td>
+    <td>3:09</td>
+</tr>
+
+<tr data-link="RhDnRE7nciw" data-cover="xg_ndna.jpg">
+    <td>8</td>
+    <td><a href="https://youtu.be/RhDnRE7nciw">HESONOO + X-GENE</a></td>
+    <td>2:20</td>
+</tr>
+
+<tr data-link="rGqEuk8Om-4" data-cover="xg_awe.jpg">
+    <td>9</td>
+    <td><a href="https://youtu.be/rGqEuk8Om-4">HOWLING</a></td>
+    <td>3:09</td>
+</tr>
+
+<tr data-link="0EC4m17bwLI" data-cover="xg_ggvng.jpg">
+    <td>10</td>
+    <td><a href="https://youtu.be/0EC4m17bwLI">GRL GVNG</a></td>
+    <td>3:09</td>
+</tr>
+
+<tr data-link="gVTu0BCDhmA" data-cover="xg_itl.jpg">
+    <td>11</td>
+    <td><a href="https://youtu.be/gVTu0BCDhmA">IS THIS LOVE</a></td>
+    <td>2:36</td>
+</tr>
+
+<tr data-link="BydbhAzmAzg" data-cover="xg_itr.jpg">
+    <td>12</td>
+    <td><a href="https://youtu.be/BydbhAzmAzg">IN THE RAIN</a></td>
+    <td>3:09</td>
+</tr>
+
+<tr data-link="WI5Zjz_07dc" data-cover="xg_core.jpg">
+    <td>13</td>
+    <td><a href="https://youtu.be/WI5Zjz_07dc">TAKE MY BREATH</a></td>
+    <td>3:28</td>
+</tr>
+
+
+</table>
+
+<table class="tracklist" id="artistTracklist-yelle">
+    <tr data-link="13o1i-cgTOA" data-cover="yl_cf.jpg">
+    <td>1</td>
+    <td><a href="https://youtu.be/13o1i-cgTOA">Complètement fou</a></td>
+    <td>3:51</td>
+</tr>
+
+<tr data-link="YyaGPUu4uiU" data-cover="yl_jte.jpg">
+    <td>2</td>
+    <td><a href="https://youtu.be/YyaGPUu4uiU">Je t'aime encore</a></td>
+    <td>3:35</td>
+</tr>
+
+<tr data-link="5BIpHulB1X8" data-cover="yl_cf.jpg">
+    <td>3</td>
+    <td><a href="https://youtu.be/5BIpHulB1X8">Florence en Italie</a></td>
+    <td>4:14</td>
+</tr>
+
+<tr data-link="5c-GeBqUgAA" data-cover="yl_cue.jpg">
+    <td>4</td>
+    <td><a href="https://youtu.be/5c-GeBqUgAA">Comme un enfant</a></td>
+    <td>4:14</td>
+</tr>
+
+<tr data-link="344XbWk3GkQ" data-cover="yl_ldv.jpg">
+    <td>5</td>
+    <td><a href="https://youtu.be/344XbWk3GkQ">Mon beau chagrin</a></td>
+    <td>2:14</td>
+</tr>
+
+<tr data-link="eoWK4rV3INY" data-cover="yl_omg.jpg">
+    <td>6</td>
+    <td><a href="https://youtu.be/eoWK4rV3INY">OMG!!!</a></td>
+    <td>3:08</td>
+</tr>
+
+<tr data-link="DMeyvg1M52k" data-cover="yl_iem.jpg">
+    <td>7</td>
+    <td><a href="https://youtu.be/DMeyvg1M52k">Ici & Maintenant (Here & Now)</a></td>
+    <td>3:10</td>
+</tr>
+
+<tr data-link="sE1rV4iLGto" data-cover="yl_n.jpg">
+    <td>8</td>
+    <td><a href="https://youtu.be/sE1rV4iLGto">Noir (Radio edit)</a></td>
+    <td>2:42</td>
+</tr>
+
+<tr data-link="rBhjd3R8Sps" data-cover="yl_cf.jpg">
+    <td>9</td>
+    <td><a href="https://youtu.be/rBhjd3R8Sps">Nuit de baise I</a></td>
+    <td>2:15</td>
+</tr>
+
+<tr data-link="W_WxFLcW8jY" data-cover="yl_cf.jpg">
+    <td>10</td>
+    <td><a href="https://youtu.be/W_WxFLcW8jY">Nuit de baise II</a></td>
+    <td>1:19</td>
+</tr>
+
+<tr data-link="RJ3OcSdiNIQ" data-cover="yl_ldv.jpg">
+    <td>11</td>
+    <td><a href="https://youtu.be/RJ3OcSdiNIQ">Un million</a></td>
+    <td>4:04</td>
+</tr>
+
+<tr data-link="AOQZNHueNQQ" data-cover="yl_romeo.jpg">
+    <td>12</td>
+    <td><a href="https://youtu.be/AOQZNHueNQQ">Romeo</a></td>
+    <td>3:30</td>
+</tr>
+
+<tr data-link="9wvhqdyi8xk" data-cover="yl_cf.jpg">
+    <td>13</td>
+    <td><a href="https://youtu.be/9wvhqdyi8xk">Bouquet Final</a></td>
+    <td>4:14</td>
+</tr>
+
+<tr data-link="Neqp_R-xAYs" data-cover="yl_ip.jpg">
+    <td>14</td>
+    <td><a href="https://youtu.be/Neqp_R-xAYs">Interpassion</a></td>
+    <td>3:08</td>
+</tr>
+
+<tr data-link="Ksm9yijuM7E" data-cover="yl_pu.jpg">
+    <td>15</td>
+    <td><a href="https://youtu.be/Ksm9yijuM7E">85A</a></td>
+    <td>2:29</td>
+</tr>
+
+<tr data-link="iFbirXS8zwQ" data-cover="yl_pu.jpg">
+    <td>16</td>
+    <td><a href="https://youtu.be/iFbirXS8zwQ">Mal poli</a></td>
+    <td>2:55</td>
+</tr>
+
+
+</table>
+
+
+      </div>
+    </div>
   </div>
-
-  <img id="coverPreviewer" alt="Album cover art">
 
   <div class="window minimized" id="app-player" style="width: 400px;">
     <div class="window-bar">
@@ -741,15 +1001,15 @@
     <div class="window-view">
       <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;">
         <iframe
-                id="player-iframe"
-                width="100%"
-                height="100%"
-                src=""
-                allow="autoplay; encrypted-media; fullscreen; picture-in-picture; clipboard-write"
-                allowfullscreen
-                playsinline
-                title="YouTube video player"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;"
+          id="player-iframe"
+          width="100%"
+          height="100%"
+          src=""
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; clipboard-write"
+          allowfullscreen
+          playsinline
+          title="YouTube video player"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;"
         ></iframe>
       </div>
     </div>
