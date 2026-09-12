@@ -4,12 +4,16 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="icon" type="image/png" href="./favicon.png" sizes="96x96" />
+<link rel="shortcut icon" href="./favicon.ico" />
+
 <link href="css/reset.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/global.css" rel="stylesheet" type="text/css" media="all">
-<script src="scripts/taskbarClock.js" defer></script>
-<script src="scripts/rwm.js" defer></script>
+<link href="css/widget/batteryGame.css" rel="stylesheet" type="text/css" media="all">
+
+<script src="scripts/main.js" type="module" defer></script>
   <link href="css/views.css" rel="stylesheet" type="text/css" media="all">
-  <script src="scripts/musicPlayer.js" defer></script>
+  <script src="scripts/apps/musicPlayer.js" defer></script>
 
   <title>Music | Rufus</title>
 </head>
@@ -72,6 +76,14 @@
     <img src="resources/musicIcons/polachek.jpg" alt="Caroline Polachek">
 </button>
 
+<button class="image-button" onclick="musicPlayer.explorer.loadList(event, 'lesserafim')">
+    <img src="resources/musicIcons/lsrf.jpeg" alt="LE SSERAFIM">
+</button>
+
+<button class="image-button" onclick="musicPlayer.explorer.loadList(event, 'dualipa')">
+    <img src="resources/musicIcons/dualipa.jpg" alt="Dua Lipa">
+</button>
+
 
     </main>
   </div>
@@ -132,6 +144,11 @@
 
 <div class="artistProfile" id="artistProfile-limperatrice">
     <h2>L'imperatrice</h2>
+    <p></p>
+</div>
+
+<div class="artistProfile" id="artistProfile-lesserafim">
+    <h2>LE SSERAFIM</h2>
     <p></p>
 </div>
 
@@ -633,7 +650,103 @@
 </table>
 
 <table class="tracklist" id="artistTracklist-dualipa">
-    
+    <tr data-link="6Zhx6ZKAQ9w" data-cover="dl_roe.jpg">
+    <td>1</td>
+    <td><a href="https://youtu.be/6Zhx6ZKAQ9w">End Of An Era (Extended)</a></td>
+    <td>4:37</td>
+</tr>
+
+<tr data-link="8EJ-vZyBzOQ" data-cover="dl_fns.png">
+    <td>2</td>
+    <td><a href="https://youtu.be/8EJ-vZyBzOQ">Future Nostalgia</a></td>
+    <td>2:05</td>
+</tr>
+
+<tr data-link="ylzhMn6MlVc" data-cover="dl_fna.jpg">
+    <td>3</td>
+    <td><a href="https://youtu.be/ylzhMn6MlVc">Pretty Please</a></td>
+    <td>3:15</td>
+</tr>
+
+<tr data-link="DkeiKbqa02g" data-cover="dl_ok.jpg">
+    <td>4</td>
+    <td><a href="https://youtu.be/DkeiKbqa02g">One Kiss</a></td>
+    <td>3:35</td>
+</tr>
+
+<tr data-link="hWw3dS2cyLc" data-cover="dl_ro.jpg">
+    <td>5</td>
+    <td><a href="https://youtu.be/hWw3dS2cyLc">End Of An Era</a></td>
+    <td>3:17</td>
+</tr>
+
+<tr data-link="1nydxbGhgv8" data-cover="dl_bym.jpg">
+    <td>6</td>
+    <td><a href="https://youtu.be/1nydxbGhgv8">Blow Your Mind (Mwah)</a></td>
+    <td>2:59</td>
+</tr>
+
+<tr data-link="9HDEHj2yzew" data-cover="dl_p.jpg">
+    <td>7</td>
+    <td><a href="https://youtu.be/9HDEHj2yzew">Physical</a></td>
+    <td>3:14</td>
+</tr>
+
+<tr data-link="1TtvG18iSxY" data-cover="dl_ro.jpg">
+    <td>8</td>
+    <td><a href="https://youtu.be/1TtvG18iSxY">These Walls</a></td>
+    <td>3:38</td>
+</tr>
+
+<tr data-link="oygrmJFKYZY" data-cover="dl_dsn.png">
+    <td>9</td>
+    <td><a href="https://youtu.be/oygrmJFKYZY">Don't Start Now</a></td>
+    <td>3:04</td>
+</tr>
+
+<tr data-link="k2qgadSvNyU" data-cover="dl_nr.png">
+    <td>10</td>
+    <td><a href="https://youtu.be/k2qgadSvNyU">New Rules</a></td>
+    <td>3:30</td>
+</tr>
+
+<tr data-link="O6s8mY0P5xA" data-cover="dl_ro.jpg">
+    <td>11</td>
+    <td><a href="https://youtu.be/O6s8mY0P5xA">Falling Forever</a></td>
+    <td>3:44</td>
+</tr>
+
+<tr data-link="qcZ7e9EOQTY" data-cover="dl_fna.jpg">
+    <td>12</td>
+    <td><a href="https://youtu.be/qcZ7e9EOQTY">Hallucinate</a></td>
+    <td>3:29</td>
+</tr>
+
+<tr data-link="Uqg4GnXmQBo" data-cover="dl_fnm.jpg">
+    <td>13</td>
+    <td><a href="https://youtu.be/Uqg4GnXmQBo">If It Ain't Me</a></td>
+    <td>3:16</td>
+</tr>
+
+<tr data-link="T12osTwLWhw" data-cover="dl_roe.jpg">
+    <td>14</td>
+    <td><a href="https://youtu.be/T12osTwLWhw">Happy For You (Extended)</a></td>
+    <td>5:57</td>
+</tr>
+
+<tr data-link="UV1XJ5GMt2E" data-cover="dl_roe.jpg">
+    <td>15</td>
+    <td><a href="https://youtu.be/UV1XJ5GMt2E">Anything For Love (Extended)</a></td>
+    <td>4:01</td>
+</tr>
+
+<tr data-link="Nj2U6rhnucI" data-cover="dl_bmh.png">
+    <td>16</td>
+    <td><a href="https://youtu.be/Nj2U6rhnucI">Break My Heart</a></td>
+    <td>3:42</td>
+</tr>
+
+
 </table>
 
 <table class="tracklist" id="artistTracklist-eleni">
@@ -694,6 +807,118 @@
 
 <table class="tracklist" id="artistTracklist-msatti">
     
+</table>
+
+<table class="tracklist" id="artistTracklist-lesserafim">
+    <tr data-link="O1iXvRRyaBE" data-cover="lsf_h.jpg">
+    <td>1</td>
+    <td><a href="https://youtu.be/O1iXvRRyaBE">So Cynical (Badum)</a></td>
+    <td>2:36</td>
+</tr>
+
+<tr data-link="n6B5gQXlB-0" data-cover="lsf_c.jpg">
+    <td>2</td>
+    <td><a href="https://youtu.be/n6B5gQXlB-0">CRAZY</a></td>
+    <td>2:45</td>
+</tr>
+
+<tr data-link="uNvewjHnHzM" data-cover="lsf_p.jpg">
+    <td>3</td>
+    <td><a href="https://youtu.be/uNvewjHnHzM">Saki (feat. Aliya's Interlude)</a></td>
+    <td>2:45</td>
+</tr>
+
+<tr data-link="8Cp-8gZ4mnE" data-cover="lsf_s.jpg">
+    <td>4</td>
+    <td><a href="https://youtu.be/8Cp-8gZ4mnE">SPAGHETTI (Member ver.)</a></td>
+    <td>2:17</td>
+</tr>
+
+<tr data-link="HFZUAXhdnHk" data-cover="lsf_d.jpg">
+    <td>5</td>
+    <td><a href="https://youtu.be/HFZUAXhdnHk">DIFFERENT</a></td>
+    <td>2:22</td>
+</tr>
+
+<tr data-link="1-vV32MYAZY" data-cover="lsf_hj.jpg">
+    <td>6</td>
+    <td><a href="https://youtu.be/1-vV32MYAZY">HOT (English ver.) (fear. JADE)</a></td>
+    <td>2:24</td>
+</tr>
+
+<tr data-link="Y1Lah0BM0KQ" data-cover="lsf_mmn.jpg">
+    <td>7</td>
+    <td><a href="https://youtu.be/Y1Lah0BM0KQ">Made My Night</a></td>
+    <td>2:06</td>
+</tr>
+
+<tr data-link="oW4weQY2tzg" data-cover="lsf_epbwdl.jpg">
+    <td>8</td>
+    <td><a href="https://youtu.be/oW4weQY2tzg">Eve, Psyche and The Bluebeard's wife (feat. Demi Lovato)</a></td>
+    <td>3:06</td>
+</tr>
+
+<tr data-link="AR62ph7FPs0" data-cover="lsf_c.jpg">
+    <td>9</td>
+    <td><a href="https://youtu.be/AR62ph7FPs0">Chasing Lightning</a></td>
+    <td>3:26</td>
+</tr>
+
+<tr data-link="nMx-tMPidK4" data-cover="lsf_p.jpg">
+    <td>10</td>
+    <td><a href="https://youtu.be/nMx-tMPidK4">iffy iffy</a></td>
+    <td>2:10</td>
+</tr>
+
+<tr data-link="5yJ7vWktv0w" data-cover="lsf_cpp.jpg">
+    <td>11</td>
+    <td><a href="https://youtu.be/5yJ7vWktv0w">CRAZY (feat. PinkPantheress)</a></td>
+    <td>2:48</td>
+</tr>
+
+<tr data-link="2Pn-fgHmmB4" data-cover="lsf_h.jpg">
+    <td>12</td>
+    <td><a href="https://youtu.be/2Pn-fgHmmB4">Born Fire</a></td>
+    <td>2:17</td>
+</tr>
+
+<tr data-link="pyf8cbqyfPs" data-cover="lsf_a.jpg">
+    <td>13</td>
+    <td><a href="https://youtu.be/pyf8cbqyfPs">ANTIFRAGILE</a></td>
+    <td>3:05</td>
+</tr>
+
+<tr data-link="L8z453XB6Iw" data-cover="lsf_p.jpg">
+    <td>14</td>
+    <td><a href="https://youtu.be/L8z453XB6Iw">Pureflow</a></td>
+    <td>1:50</td>
+</tr>
+
+<tr data-link="hLvWy2b857I" data-cover="lsf_pn.jpg">
+    <td>15</td>
+    <td><a href="https://youtu.be/hLvWy2b857I">Perfect Night</a></td>
+    <td>2:40</td>
+</tr>
+
+<tr data-link="riLpx8N4FGI" data-cover="lsf_p.jpg">
+    <td>16</td>
+    <td><a href="https://youtu.be/riLpx8N4FGI">Trust Exercise</a></td>
+    <td>2:23</td>
+</tr>
+
+<tr data-link="oRHyRoJQxJ0" data-cover="lsf_u.jpg">
+    <td>17</td>
+    <td><a href="https://youtu.be/oRHyRoJQxJ0">Burn the Bridge</a></td>
+    <td>2:35</td>
+</tr>
+
+<tr data-link="L8Tbt0duhqk" data-cover="lsf_a.jpg">
+    <td>18</td>
+    <td><a href="https://youtu.be/L8Tbt0duhqk">No Celestial</a></td>
+    <td>2:47</td>
+</tr>
+
+
 </table>
 
 <table class="tracklist" id="artistTracklist-limperatrice">
@@ -1045,8 +1270,55 @@
     <div id="taskbar-activities"></div>
     </div>
     <div class="taskbar-right">
+    <p>BAT</p>
     <span id="taskbarClock">00:00</span>
     </div>
+</div>
+
+<div class="window widget" id="batteryGame">
+  <div>
+    <div class="battery-grid">
+      <button
+        id="socketDisplay0"
+        onclick="batteryGame.action.handleClick(0)"
+        oncontextmenu="batteryGame.action.handleUpgrade(0, event)"
+        onmouseover="batteryGame.action.handleTooltip(0)"
+        onmouseleave="batteryGame.action.clearTooltip()"
+      ></button>
+      <button
+        id="socketDisplay1"
+        onclick="batteryGame.action.handleClick(1)"
+        oncontextmenu="batteryGame.action.handleUpgrade(1, event)"
+        onmouseover="batteryGame.action.handleTooltip(1)"
+        onmouseleave="batteryGame.action.clearTooltip()"
+      ></button>
+      <button
+        id="socketDisplay2"
+        onclick="batteryGame.action.handleClick(2)"
+        oncontextmenu="batteryGame.action.handleUpgrade(2, event)"
+        onmouseover="batteryGame.action.handleTooltip(2)"
+        onmouseleave="batteryGame.action.clearTooltip()"
+      ></button>
+      <button
+        id="socketDisplay3"
+        onclick="batteryGame.action.handleClick(3)"
+        oncontextmenu="batteryGame.action.handleUpgrade(3, event)"
+        onmouseover="batteryGame.action.handleTooltip(3)"
+        onmouseleave="batteryGame.action.clearTooltip()"
+      ></button>
+    </div>
+    <div class="battery-currency">
+      <button onmouseover="batteryGame.action.handleTooltip(4)" onmouseleave="batteryGame.action.clearTooltip()">
+        $: <span id="batteryCurrencyCash"></span>
+      </button>
+      <button onmouseover="batteryGame.action.handleTooltip(5)" onmouseleave="batteryGame.action.clearTooltip()">
+        E: <span id="batteryCurrencyEnergy"></span>
+      </button>
+    </div>
+  </div>
+  <div>
+
+  </div>
 </div>
 </body>
 </html>
