@@ -6,6 +6,7 @@ import json                 # Importing json to read objects
 import argparse             # We will need this to treat the script as a CLI
 import time                 # For calculating the time a compile step took
 import sys                  # Allows us to sys.exit and kill the process when needed
+import mimetypes            # Allows us to use ES modules
 from pathlib import Path    # Python's modern path manager
 from http.server import BaseHTTPRequestHandler, HTTPServer 
 
@@ -134,7 +135,15 @@ class HTTPHandler(BaseHTTPRequestHandler):
         file_path = PUBLIC / path
 
         if file_path.suffix != '.html':
+            if not file_path.is_file():
+                self.send_response(404)
+                self.end_headers()
+                self.wfile.write(b'Not found')
+                return
+            
+            content_type, _ = mimetypes.guess_type(str(file_path))
             self.send_response(200)
+            self.send_header('Content-Type', content_type or 'application/octet-stream')
             self.end_headers()
             self.wfile.write(file_path.read_bytes())
             return

@@ -7,10 +7,10 @@ const rwm = {
 
     windows.forEach((window) => {
       const appBar = window.querySelector(".window-bar");
-      appBar.addEventListener("mousedown", (e) => {rwm.window.move(e)})
+      if (appBar) appBar.addEventListener("mousedown", (e) => {rwm.window.move(e)})
       window.addEventListener("click", () => rwm.window.focus(window))
       const minimizer = window.querySelector(".window-bar button")
-      minimizer.addEventListener("click", () => rwm.window.minimizer(window, false))
+      if (minimizer) minimizer.addEventListener("click", () => rwm.window.minimizer(window, false))
       rwm.taskbar.registerWindow(window)
     })
   },
@@ -18,13 +18,16 @@ const rwm = {
   taskbar: {
     display: document.getElementById('taskbar-activities'),
     registerWindow: (window) => {
-      const title = window.querySelector('.window-bar p').innerText;
-    
-      const activityButton = document.createElement('button');
-      activityButton.innerText = title;
-      activityButton.onclick = () => rwm.window.minimizer(window);
+      let windowTitle = window.querySelector('.window-bar p')
+      if (windowTitle) {
+        const title = windowTitle.innerText;
+      
+        const activityButton = document.createElement('button');
+        activityButton.innerText = title;
+        activityButton.onclick = () => rwm.window.minimizer(window);
 
-      rwm.taskbar.display.appendChild(activityButton);
+        rwm.taskbar.display.appendChild(activityButton);
+      }
     }
   },
 
@@ -69,4 +72,4 @@ const rwm = {
   }
 }
 
-document.addEventListener("DOMContentLoaded", rwm.init);
+export default rwm;
