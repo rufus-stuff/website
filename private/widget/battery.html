@@ -1,0 +1,65 @@
+<div class="window widget" id="batteryGame" popover="auto">
+  <div>
+    <div class="battery-grid">
+      <button
+        onclick="batteryGame.action.handleClick(0)"
+        oncontextmenu="batteryGame.action.handleUpgrade(0, event)"
+        onmouseover="batteryGame.action.handleTooltip(0)"
+        onmouseleave="batteryGame.action.clearTooltip()"
+      >  
+        <img
+        id="socketDisplay0"
+        src="./resources/battery/plug.png"
+        >
+      </button>
+      <button
+        onclick="batteryGame.action.handleClick(1)"
+        oncontextmenu="batteryGame.action.handleUpgrade(1, event)"
+        onmouseover="batteryGame.action.handleTooltip(1)"
+        onmouseleave="batteryGame.action.clearTooltip()"
+      >  
+        <img
+        id="socketDisplay1"
+        src="./resources/battery/plug.png"
+        >
+      </button>
+      <button
+        onclick="batteryGame.action.handleClick(2)"
+        oncontextmenu="batteryGame.action.handleUpgrade(2, event)"
+        onmouseover="batteryGame.action.handleTooltip(2)"
+        onmouseleave="batteryGame.action.clearTooltip()"
+      >  
+        <img
+        id="socketDisplay2"
+        src="./resources/battery/plug.png"
+        >
+      </button>
+      <button
+        onclick="batteryGame.action.handleClick(3)"
+        oncontextmenu="batteryGame.action.handleUpgrade(3, event)"
+        onmouseover="batteryGame.action.handleTooltip(3)"
+        onmouseleave="batteryGame.action.clearTooltip()"
+      >  
+        <img
+        id="socketDisplay3"
+        src="./resources/battery/plug.png"
+        >
+      </button>
+    </div>
+    <div class="battery-currency">
+      <p>
+        $: <span id="batteryCurrencyCash"></span>
+      </p>
+      <p onmouseover="batteryGame.action.handleTooltip(4)" onmouseleave="batteryGame.action.clearTooltip()">
+        E: <span id="batteryCurrencyEnergy"></span>
+      </p>
+    </div>
+  </div>
+  <div style="font-size: 0.875rem;">
+    <p style="margin-bottom: 0.5rem;">Idle minigame under construction!</p>
+    <p style="margin-bottom: 0.5rem;">Batteries are automatically recharged, you can click them to charge them faster but it will use up your energy.</p>
+    <p>The game continues playing even when you're away!</p>
+  </div>
+</div>
+
+<div class="window widget" id="batteryTooltip"></div>

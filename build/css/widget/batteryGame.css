@@ -1,0 +1,44 @@
+#batteryGame {
+    &:popover-open { display: grid; }
+    grid-template-columns: 140px 1fr;
+    column-gap: 8px;
+    width: 26rem;
+    height: 11rem;
+
+    .battery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1/1;
+            padding: 8px;
+            cursor: pointer;
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+    .battery-currency {
+        display: flex;
+        justify-content: space-around;
+        margin-block: 4px;
+    }
+}
+
+#batteryTooltip {
+    display: none;
+    width: 14rem;
+    height: 11rem;
+    right: 27rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+
+    &.show {
+        display: block;
+    }
+}
