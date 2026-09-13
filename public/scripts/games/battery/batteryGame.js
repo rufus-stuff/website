@@ -127,7 +127,7 @@ export const game = {
           store.save();
           game.ui.render.socket(idx);
           game.ui.render.energy();
-          game.ui.tooltip.redraw();
+          if (game.ui.tooltip.current != null) game.ui.tooltip.redraw();
         }
       },
       unlock(idx) {
