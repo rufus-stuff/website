@@ -12,7 +12,7 @@ export const game = {
 
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'visible') {
-        game.inner.offline.catchUp();
+        game.inner.handleOfflineTime();
         game.ui.render.all();
       }
     });
