@@ -1,3 +1,46 @@
-Credits: https://envs.net/~ljn/95.css/#intro
-https://alexmeub.com/old-windows-icons/
-Battery game, battery icon: https://ripitapart.com
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ head-content }}
+    <title>Welcome | Rufus</title>
+  </head>
+  <body>
+    <div class="window" style="width: 600px;">
+      <div class="window-bar">
+        <p>About</p>
+        <button aria-label="Minimize window"></button>
+      </div>
+      <main class="window-view">
+        <h1>Hi! I'm Rufus</h1>
+        <img src="./resources/rufus.png" alt="A headshot of an anthropomorphic lizard painted in an impressionist style with its tongue out and eyes open, looking goofy and smiley over an abstract purple backgorund" title="This is me! -- Art by gaertan.bsky.social" style="height: 50dvh;">
+        <div class="prose">
+        <p>This site was made for fun. I wanted a place where I could keep my stuff without worrying about changing social media regulations or loosing what I had made for any reason. I'm trying to put all the things that I like into here as a way to let people know more about me, figure out what I like to do and chat about and also help me not forget about things!</p>
+        <p>This site was built using a (still unnamed) compiler I created specifically to be able to make simple html sites fast without having to deal with node or having to keep all components on all pages updated by hand. I've talked about it on <a href="https://bsky.app/profile/therufusrufus.bsky.social/post/3mv2wkdzl422w">these comments</a> on my bluesky post, but I'll try to properly write about it over here once I've finished the main features I planned for it!</p>
+        <p>I don't want to forget to <a href="#" onclick="rwm.window.invokeById('creditsWindow', event)">credit</a> any project that has assisted in brinking this page to life in any way.</p>
+        </div>
+      </main>
+    </div>
+
+    <div id="creditsWindow" class="window minimized" style="width: 600px;">
+      <div class="window-bar">
+        <p>Credits</p>
+        <button aria-label="Minimize window"></button>
+      </div>
+      <div class="window-view">
+        <div class="prose">
+        <h2>Credits</h2>
+        <p>Thank you very much to all projects that I've used as reference or as part of this project!</p>
+        <hr>
+        <ul>
+            <li>The art I'm using as profile pic and favicon is <a href="https://bsky.app/profile/gaertan.bsky.social">Gaertan's</a></li>
+            <li><a href="https://envs.net/~ljn/95.css/#intro">envs.net's 95.css</a>: Used as a style reference for some of the UI components of the page</li>
+            <li><a href="https://alexmeub.com/old-windows-icons/">alexmub's old windows icons</a>: Most of the Windows-style icons on the site come from here!</li>
+            <li><a href="https://ripitapart.com">Rip it apart</a>: They extracted Windows XP's battery icons, which I use in the taskbar minigame</li>
+        </ul>
+        </div>
+    </div>
+    </div>
+    
+    {{ taskbar }}
+  </body>
+</html>

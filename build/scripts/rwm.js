@@ -36,6 +36,11 @@ const rwm = {
       rwm.focus++;
       window.style.zIndex = rwm.focus;
     },
+    invokeById: (id, e) => {
+      e.stopPropagation();
+      let window = document.getElementById(id);
+      rwm.window.minimizer(window, true);
+    },
     minimizer: (window, resuming = null) => {
       if (resuming === true) {
         window.classList.remove('minimized');
@@ -73,3 +78,4 @@ const rwm = {
 }
 
 export default rwm;
+window.rwm = rwm;

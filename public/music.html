@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   {{ head-content }}
-  <link href="css/views.css" rel="stylesheet" type="text/css" media="all">
+  <link href="css/view/music.css" rel="stylesheet" type="text/css" media="all">
   <script src="scripts/apps/musicPlayer.js" defer></script>
 
   <title>Music | Rufus</title>
@@ -17,20 +17,53 @@
 
       <div class="grid-category">
         <h2>Artists I love</h2>
-        <p>Artists and groups I just can't get enough of</p>
+        <p>Artists and groups I just can't get enough of.</p>
       </div>
-      {{ list/artistButton#favorites }}
-
-      <div class="grid-category">
-        <h2>Chill</h2>
-        <p>Chill or lo-fi music, because I do vibe a lot with that.</p>
-      </div>
+      {{ list/music/artistButton#favorites }}
 
       <div class="grid-category">
         <h2>Girlies</h2>
-        <p>Girly pop.</p>
+        <p>All the girls are girling, girling.</p>
       </div>
-      {{ list/artistButton#girlies }}
+      {{ list/music/artistButton#girlies }}
+
+      <div class="grid-category">
+        <h2>International</h2>
+        <p>Other languages and other places I enjoy.</p>
+      </div>
+      <!-- Yves -->
+
+      <div class="grid-category">
+        <h2>From the archive</h2>
+        <p>For one reason or another it's been a while since I last listened to these artists, but I still love them a lot.</p>
+      </div>
+      <!-- half·alive -->
+
+      <div class="grid-category">
+        <h2>More people!</h2>
+        <p>I will probably add these artists properly later! I just need time to give them their little playlist.</p>
+        <ul>
+          <li>Angéle</li>
+          <li>Daði Freyr</li>
+          <li>Eleni Foureira</li>
+          <li>Francesco Gabbani</li>
+          <li>Jotce Jonathan</li>
+          <li>Kilye Minogue</li>
+          <li>Hayley Williams</li>
+          <li>L'imperatrice</li>
+          <li>Lado Gaga</li>
+          <li>Madame Monsieur</li>
+          <li>Marina Satti</li>
+          <li>Paradis</li>
+          <li>Paramore</li>
+          <li>RuPaul</li>
+          <li>Sigrid</li>
+          <li>Therapie TAXI</li>
+          <li>Tove Lo</li>
+          <li>Vök</li>
+          <li>Voyou</li>
+        </ul>
+      </div>
     </main>
   </div>
 
@@ -43,10 +76,10 @@
     <div class="window-view">
       <div class="playlist-header">
         <img id="coverPreviewer" src="resources/albumArt/empty.jpg" alt="Album cover art">
-        {{ list/artistProfile#main }}
+        {{ list/music/artistProfile#main }}
       </div>
       <div>
-        {{ list/artistPlaylist#main }}
+        {{ list/music/artistPlaylist#main }}
       </div>
     </div>
   </div>

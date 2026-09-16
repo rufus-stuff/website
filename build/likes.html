@@ -12,8 +12,9 @@
 <link href="css/widget/batteryGame.css" rel="stylesheet" type="text/css" media="all">
 
 <script src="scripts/main.js" type="module" defer></script>
-  
-  <link href="css/views.css" rel="stylesheet" type="text/css" media="all">
+  <link href="css/view/likes.css" rel="stylesheet" type="text/css" media="all">
+  <script src="scripts/apps/likesViewer.js" defer></script>
+
   <title>Stuff I Like | Rufus</title>
 </head>
 <body>
@@ -22,30 +23,13 @@
       <p>I like many things</p>
       <button aria-label="Minimize window"></button>
     </div>
-    <main class="window-view view-details-grid">
-      <!-- List of likes start -->
+    <main class="window-view view-dual-panel">
+      <div class="view-grid">
 
-      <details name="like">
-        <summary>
-          <img src="resources/likeIcons/f1.jpg" alt="Formula 1">
-        </summary>
-        <article>
-          <h3>Formula 1</h3>
-          <p>I became a big fan of Formula 1 by accident, just because I enjoyed watching the ✨numbers✨ </p>
-        </article>
-      </details>
-      <details name="like">
-        <summary>
-          <img src="resources/likeIcons/dragrace.jpg" alt="Drag Race">
-        </summary>
-        I like Drag Race
-      </details>
-      <details name="like">
-        <summary>Code</summary>
-        I like Code
-      </details>
-
-      <!-- List of likes end -->
+      </div>
+      <div class="view-details">
+        things
+      </div>
     </main>
   </div>
 

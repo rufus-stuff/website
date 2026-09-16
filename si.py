@@ -10,6 +10,27 @@ import mimetypes            # Allows us to use ES modules
 from pathlib import Path    # Python's modern path manager
 from http.server import BaseHTTPRequestHandler, HTTPServer 
 
+"""
+  Current template systems
+    {{ template }}
+    {{ directory/path/template }}
+    {{ smart#template }}
+
+  Current variables and conditionals
+    { 0 }
+    { # }
+    {? ?}
+
+  Future parameters
+    {{ template:[] }}
+
+  Future real templates
+    #[ template ]
+    #[ template:[] ]
+
+  Routing?
+"""
+
 
 #==== SETTINGS =============================================================
 # Scanned folders
