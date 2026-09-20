@@ -55,15 +55,17 @@ button, a.btn{
   align-items: start;
   background-color: lightgray;
   z-index: 9999999;
+  height: fit-content;
+  align-items: stretch;
 
   &:popover-open { display: flex; }
 
   div {
     width: 3rem;
-    height: 100%;
+    display: flex;
     background: linear-gradient(170deg, rgb(26 26 175) 0%, rgb(3 3 75) 70%);
     padding: 30px 2px 6px;
-    margin-right: 2px;
+    margin-right: 3px;
     p {
       writing-mode: vertical-lr;
       text-align: start;

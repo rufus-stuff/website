@@ -12,6 +12,17 @@ const rwm = {
       const minimizer = window.querySelector(".window-bar button")
       if (minimizer) minimizer.addEventListener("click", () => rwm.window.minimizer(window, false))
       rwm.taskbar.registerWindow(window)
+
+      // Window commands
+      if (window.classList.contains('wincmd-center')) {
+        const winH = window.offsetHeight;
+        const winW = window.offsetWidth;
+        const docH = document.documentElement.clientHeight;
+        const docW = document.documentElement.clientWidth;
+
+        window.style.top = `${(docH-winH)/2}px`;
+        window.style.left = `${(docW-winW)/2}px`;
+      }
     })
   },
 
