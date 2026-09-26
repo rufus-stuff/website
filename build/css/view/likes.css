@@ -32,3 +32,8 @@
     object-fit: cover;
   }
 }
+
+.detail-item:not(.visible) {
+  display: none;
+  visibility: hidden;
+}
