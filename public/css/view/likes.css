@@ -3,21 +3,22 @@
 }
 
 .view-dual-panel {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
 }
 
 .view-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, var(--grid-size));
-  gap: 8px;
+  grid-template-rows: repeat(auto-fill, var(--grid-size));
+  gap: 4px;
   width: 100%;
 }
 
 .view-details {
-    background-color: silver;
-    box-shadow: var(--border-bevel-pressed);
-    padding: 4px 8px;
+  background-color: silver;
+  box-shadow: var(--border-bevel-pressed);
+  padding: 4px 8px;
 }
 
 .image-button {

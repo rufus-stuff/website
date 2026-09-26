@@ -63,6 +63,7 @@ export const game = {
       game.inner.player.recharge();
       game.ui.render.sockets();
       game.ui.render.taskbarIcon();
+      game.ui.render.cash();
       game.inner.socket.recharge();
       if (game.ui.tooltip.current !== null) game.ui.tooltip.redraw();
     },

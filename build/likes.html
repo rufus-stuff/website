@@ -18,19 +18,106 @@
   <title>Stuff I Like | Rufus</title>
 </head>
 <body>
-  <div class="window">
+  <div class="window" style="width: 730px;">
     <div class="window-bar">
       <p>I like many things</p>
       <button aria-label="Minimize window"></button>
     </div>
     <main class="window-view view-dual-panel">
-      <div class="view-grid">
+      <div>
+        <div style="grid-column: 1/-1; ">
+          <h2>Here's stuff I like</h2>
+          <p>If ever wonder about what we can chat about, I'm always happy to spend hours on any of these topics!</p>
+        </div>
+        <div class="view-grid">
+        <button class="image-button" onclick="likes.view('os')">
+    <img src="resources/likeIcons/systems.jpeg" alt="Operating Systems">
+</button>
 
+<button class="image-button" onclick="likes.view('linux')">
+    <img src="resources/likeIcons/linux.png" alt="Linux Distributions">
+</button>
+
+<button class="image-button" onclick="likes.view('ux')">
+    <img src="resources/likeIcons/window.png" alt="Desktop UX">
+</button>
+
+<button class="image-button" onclick="likes.view('android')">
+    <img src="resources/likeIcons/android.png" alt="Android OS">
+</button>
+
+<button class="image-button" onclick="likes.view('dumbphone')">
+    <img src="resources/likeIcons/jelly.webp" alt="Dumbphones">
+</button>
+
+<button class="image-button" onclick="likes.view('rpdr')">
+    <img src="resources/likeIcons/dragrace.jpg" alt="RuPaul's Drag Race">
+</button>
+
+<button class="image-button" onclick="likes.view('taskmaster')">
+    <img src="resources/likeIcons/taskmaster.jpg" alt="Taskmaster">
+</button>
+
+<button class="image-button" onclick="likes.view('familyguy')">
+    <img src="resources/likeIcons/familyguy.jpg" alt="Family Guy">
+</button>
+
+<button class="image-button" onclick="likes.view('catscountdown')">
+    <img src="resources/likeIcons/catscountdown.jpg" alt="8 out of 10 cats does countdown">
+</button>
+
+<button class="image-button" onclick="likes.view('f1')">
+    <img src="resources/likeIcons/f1.webp" alt="Formula 1">
+</button>
+
+
+        </div>
       </div>
       <div class="view-details">
-        things
+        <div class="detail-item hidden" id="details-os">
+    
+</div>
+
+<div class="detail-item hidden" id="details-linux">
+    
+</div>
+
+<div class="detail-item hidden" id="details-ux">
+    
+</div>
+
+<div class="detail-item hidden" id="details-android">
+    
+</div>
+
+<div class="detail-item hidden" id="details-dumbphone">
+    
+</div>
+
+<div class="detail-item hidden" id="details-rpdr">
+    
+</div>
+
+<div class="detail-item hidden" id="details-taskmaster">
+    
+</div>
+
+<div class="detail-item hidden" id="details-familyguy">
+    
+</div>
+
+<div class="detail-item hidden" id="details-catscountdown">
+    
+</div>
+
+<div class="detail-item hidden" id="details-f1">
+    
+</div>
+
+
       </div>
     </main>
+      </div>
   </div>
 
   <div id="startMenu" popover>
@@ -138,7 +225,7 @@
   <div style="font-size: 0.875rem;">
     <p style="margin-bottom: 0.5rem;">Idle minigame under construction!</p>
     <p style="margin-bottom: 0.5rem;">Batteries are automatically recharged, you can click them to charge them faster but it will use up your energy.</p>
-    <p>The game continues playing even when you're away!</p>
+    <p>The game continues playing even if you close the page!</p>
   </div>
 </div>
 
