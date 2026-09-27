@@ -1,0 +1,55 @@
+/* Mobile taskbar pair */
+@media (max-width: 550px) {
+  :root {
+    --taskbar-height: 54px;
+    --mobile-factor: 1.5;
+  }
+
+  body { padding-top: 28px; }
+
+  div.window.widget {
+    top: 2.4rem;
+    bottom: unset;
+  }
+
+  div#taskbar {
+    #startButton {
+      padding-block: 8px;
+      flex-shrink: 0;
+      img {
+        width: 36px !important; 
+        height: 36px !important;
+      }
+      p {
+        display: none;
+      }
+    }
+
+    #taskbar-activities {
+      height: calc(var(--taskbar-height) - 2px);
+      flex-wrap: wrap;
+      row-gap: 0;
+      button {
+        max-height: 1.75rem;
+      }
+    }
+
+    .taskbar-spacer {
+      box-shadow: none;
+      width: 0;
+      margin-inline: 6px 0;
+    }
+
+    .taskbar-right {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: silver;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
+  }
+}

@@ -3,8 +3,17 @@
 }
 
 .view-dual-panel {
+  height: 100%;
   display: grid;
   grid-template-columns: 2fr 3fr;
+  min-height: 0;
+}
+
+@container window-width (max-width: 500px) {
+  .view-dual-panel {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 3fr;
+  }
 }
 
 .view-grid {

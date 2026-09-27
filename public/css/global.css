@@ -1,4 +1,8 @@
 :root {
+  --desktop-height: calc(100dvh - (var(--taskbar-height) * var(--mobile-factor)));
+  --taskbar-height: 28px;
+  --mobile-factor: 1;
+
   --border-bevel: inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,inset -2px -2px grey,inset 2px 2px #fff;
   --border-bevel-highlight: inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #fff;
   --border-bevel-pressed: inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey;
@@ -52,7 +56,7 @@ button, a.btn{
   position: fixed;
   width: 13rem;
   inset: unset;
-  bottom: calc(1.8rem + 2px);
+  bottom: calc(var(--taskbar-height) + 2px);
   left: 2px;
   box-shadow: var(--border-bevel);
   border: none;
@@ -109,6 +113,7 @@ div.prose {
 
 div#taskbar {
   position: fixed;
+  height: var(--taskbar-height);
   bottom: 0;
   width: 100%;
   background: lightgray;
@@ -161,21 +166,28 @@ div#taskbar {
 }
 
 div.window {
-  background: lightgray;
-  padding: 3px;
+  /* Windows should declare a starting width through the usage of inline styles, 
+  the base class provides fallbacks to prevent from aesthetic issues. */
+  min-width: 200px;
   width: 30rem;
+  max-width: 95dvw;
+
+  /* Window heights are universal for all windows. */
+  height: fit-content;
+  max-height: calc(var(--desktop-height) - 2rem);
+  
   position: absolute;
   resize: both;
   overflow: hidden;
-  min-width: 200px;
-  min-height: 200px;
-  height: fit-content;
-  max-height: 90dvh;
-  box-shadow: var(--border-bevel);
   transform-origin: center bottom;
   transition: transform 200ms, opacity 90ms 110ms;
+
   display: flex;
   flex-direction: column;
+
+  background: lightgray;
+  padding: 3px;
+  box-shadow: var(--border-bevel);
 
   &.widget {
     resize: none;
@@ -238,6 +250,11 @@ div.window {
     overflow-x: hidden;
     overflow-y: auto;
     height: 100%;
+    container-type: inline-size;
+    container-name: window-width;
+    &:has(.view-dual-panel) {
+      overflow: hidden;
+    }
   }
 
   &.grabbing {

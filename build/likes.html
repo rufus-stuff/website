@@ -9,6 +9,7 @@
 
 <link href="css/reset.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/global.css" rel="stylesheet" type="text/css" media="all">
+<link href="css/mobile.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/widget/batteryGame.css" rel="stylesheet" type="text/css" media="all">
 
 <script src="scripts/main.js" type="module" defer></script>
@@ -18,19 +19,20 @@
   <title>Stuff I Like | Rufus</title>
 </head>
 <body>
-  <div class="window" style="width: 760px;">
+  <div class="window" style="width: 760px; height: 90dvh;">
     <div class="window-bar">
       <p>I like many things</p>
       <button aria-label="Minimize window"></button>
     </div>
-    <main class="window-view view-dual-panel">
-      <div class="scrollable">
-        <div>
-          <h2>Here's stuff I like</h2>
-          <p>If ever wonder about what we can chat about, I'm always happy to spend hours on any of these topics!</p>
-        </div>
-        <div class="view-grid">
-        <button class="image-button" onclick="likesViewer.view('linux')">
+    <main class="window-view">
+      <div class="view-dual-panel">
+        <div class="scrollable">
+          <div>
+            <h2>Here's stuff I like</h2>
+            <p>If ever wonder about what we can chat about, I'm always happy to spend hours on any of these topics!</p>
+          </div>
+          <div class="view-grid">
+          <button class="image-button" onclick="likesViewer.view('linux')">
     <img src="resources/likeIcons/linux.png" alt="Linux Distributions">
 </button>
 
@@ -67,10 +69,10 @@
 </button>
 
 
+          </div>
         </div>
-      </div>
-      <div class="view-details scrollable">
-        <div class="detail-item prose" id="details-linux">
+        <div class="view-details scrollable">
+          <div class="detail-item prose" id="details-linux">
     <h1>Linux!</h1>
 <p>I'm obviously a linux lover. I've gone through at least a hundred distros just testing things and I've daily driven half a dozen of them: Guadalinex, Peppermint, Zorin, Mint (for a long time), Ubuntu, Fedora (also for a long time)</p>
 <img src="/resources/images/ubuntu1604.jpg" alt="A screenshot of the Ubuntu Desktop on its version 16.04">
@@ -149,6 +151,7 @@
 </div>
 
 
+        </div>
       </div>
     </main>
   </div>
@@ -183,9 +186,9 @@
 
 <div id="taskbar">
     <div class="taskbar-left">
-    <button popovertarget="startMenu">
+    <button id="startButton" popovertarget="startMenu">
         <img src="resources/start.png" alt="Start menu icon">
-        Start
+        <p>Start</p>
     </button>
     <div class="taskbar-spacer"></div>
     <div id="taskbar-activities"></div>

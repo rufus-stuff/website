@@ -10,6 +10,7 @@
 
 <link href="css/reset.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/global.css" rel="stylesheet" type="text/css" media="all">
+<link href="css/mobile.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/widget/batteryGame.css" rel="stylesheet" type="text/css" media="all">
 
 <script src="scripts/main.js" type="module" defer></script>
@@ -81,7 +82,7 @@
     <div class="window-view prose-changelog">
       <h2>Changelog</h2>
       <hr>
-      <h3>Original release (2026.09.001)</h3>
+      <h3>1.0: Original Release (2026-09-27) [#7237522]</h3>
 <h4>rwm</h4>
 <ul>
     <li>[NEW] Windows are draggable and resizable</li>
@@ -98,6 +99,11 @@
     <li>[NEW] Introduced playlist explorer</li>
     <li>[NEW] Introduced embedded music player</li>
     <li>[NEW] Added several artists and playlists to the page</li>
+</ul>
+<h4>Likes</h4>
+<ul>
+    <li>[NEW] Introduced dual panel viewer</li>
+    <li>[NEW] Added mini docs on what I like</li>
 </ul>
 <h4>Charge idle (Alpha)</h4>
 <ul>
@@ -138,9 +144,9 @@
 
 <div id="taskbar">
     <div class="taskbar-left">
-    <button popovertarget="startMenu">
+    <button id="startButton" popovertarget="startMenu">
         <img src="resources/start.png" alt="Start menu icon">
-        Start
+        <p>Start</p>
     </button>
     <div class="taskbar-spacer"></div>
     <div id="taskbar-activities"></div>
