@@ -18,106 +18,139 @@
   <title>Stuff I Like | Rufus</title>
 </head>
 <body>
-  <div class="window" style="width: 730px;">
+  <div class="window" style="width: 760px;">
     <div class="window-bar">
       <p>I like many things</p>
       <button aria-label="Minimize window"></button>
     </div>
     <main class="window-view view-dual-panel">
-      <div>
-        <div style="grid-column: 1/-1; ">
+      <div class="scrollable">
+        <div>
           <h2>Here's stuff I like</h2>
           <p>If ever wonder about what we can chat about, I'm always happy to spend hours on any of these topics!</p>
         </div>
         <div class="view-grid">
-        <button class="image-button" onclick="likes.view('os')">
-    <img src="resources/likeIcons/systems.jpeg" alt="Operating Systems">
-</button>
-
-<button class="image-button" onclick="likes.view('linux')">
+        <button class="image-button" onclick="likesViewer.view('linux')">
     <img src="resources/likeIcons/linux.png" alt="Linux Distributions">
 </button>
 
-<button class="image-button" onclick="likes.view('ux')">
+<button class="image-button" onclick="likesViewer.view('ux')">
     <img src="resources/likeIcons/window.png" alt="Desktop UX">
 </button>
 
-<button class="image-button" onclick="likes.view('android')">
+<button class="image-button" onclick="likesViewer.view('android')">
     <img src="resources/likeIcons/android.png" alt="Android OS">
 </button>
 
-<button class="image-button" onclick="likes.view('dumbphone')">
+<button class="image-button" onclick="likesViewer.view('dumbphone')">
     <img src="resources/likeIcons/jelly.webp" alt="Dumbphones">
 </button>
 
-<button class="image-button" onclick="likes.view('rpdr')">
+<button class="image-button" onclick="likesViewer.view('rpdr')">
     <img src="resources/likeIcons/dragrace.jpg" alt="RuPaul's Drag Race">
 </button>
 
-<button class="image-button" onclick="likes.view('taskmaster')">
+<button class="image-button" onclick="likesViewer.view('taskmaster')">
     <img src="resources/likeIcons/taskmaster.jpg" alt="Taskmaster">
 </button>
 
-<button class="image-button" onclick="likes.view('familyguy')">
+<button class="image-button" onclick="likesViewer.view('familyguy')">
     <img src="resources/likeIcons/familyguy.jpg" alt="Family Guy">
 </button>
 
-<button class="image-button" onclick="likes.view('catscountdown')">
+<button class="image-button" onclick="likesViewer.view('catscountdown')">
     <img src="resources/likeIcons/catscountdown.jpg" alt="8 out of 10 cats does countdown">
 </button>
 
-<button class="image-button" onclick="likes.view('f1')">
+<button class="image-button" onclick="likesViewer.view('f1')">
     <img src="resources/likeIcons/f1.webp" alt="Formula 1">
 </button>
 
 
         </div>
       </div>
-      <div class="view-details">
-        <div class="detail-item hidden" id="details-os">
-    
+      <div class="view-details scrollable">
+        <div class="detail-item prose" id="details-linux">
+    <h1>Linux!</h1>
+<p>I'm obviously a linux lover. I've gone through at least a hundred distros just testing things and I've daily driven half a dozen of them: Guadalinex, Peppermint, Zorin, Mint (for a long time), Ubuntu, Fedora (also for a long time)</p>
+<img src="/resources/images/ubuntu1604.jpg" alt="A screenshot of the Ubuntu Desktop on its version 16.04">
+<p>The first distro I tried, ubuntu 16.04</p>
+<img src="/resources/images/desktop.png" alt="A screenshot of my current desktop, using Fedora 44 and KDE">
+<p>My current computer! I use Fedora KDE (have been doing so for a year and I'm very confy with it, highly recommend)</p>
 </div>
 
-<div class="detail-item hidden" id="details-linux">
-    
+<div class="detail-item prose" id="details-ux">
+    <h1>Desktop UX and OSes</h1>
+<p>Let me tell you, I was that kid in class cutting square pieces of paper to draw phones and laptops onto, and I batch made those daily. I drew so many phones, so many apps with so many UIs (This is probably related to my obsession with Android and Material Design)</p>
+<p>I also loved installing every single distro I could find and analyze how each and every detail differred from one to another, my love for UX really started here.</p>
+<p>I have a wall at home where i hand painted the window manager of over 25 desktop environments through history, including linux, mac, windows, android, OS/2... I'll show it here some day.</p>
+<p>I also have a collection of ISOs (taking over 500Gb in my hard drive) with a couple hundred versions of linux distros and windows. I should put a screenshot of that here.</p>
 </div>
 
-<div class="detail-item hidden" id="details-ux">
-    
+<div class="detail-item prose" id="details-android">
+    <h1>The Android OS</h1>
+<p>Some of you might remember that Google (before they became an <em>AI company with AI powered by AI for AI with AI</em>) used to do cool stuff like release innovative stuff, like Material design</p>
+<img src="/resources/images/material1.png" alt="A screenshot of the website Google published containing the Material Design guidelines">
+<p>When they released these alongside Android 5.0 Lollipop back in 2014 I became <strong><em>obsessed</em></strong> with the OS and everything that surrounded it. I remember studying the MD docs and trying to match all my schoolwork to them, and I started following Android releases and devices quite closely.</p>
+<p>Back then I had motorola and LG as my fav brands, I had a Moto G (2nd gen) and the LG G6. Before becoming team Xiaomi for quite a while.</p>
+<p>I loved exploring different Android skins and how each brand took the OS to different places. To this day I still consider it an awesome plan to go to phone stores just to try out new system versions on whatever device they have on display.</p>
 </div>
 
-<div class="detail-item hidden" id="details-android">
-    
+<div class="detail-item prose" id="details-dumbphone">
+    <h1>Dumbphones!</h1>
+<img src="/resources/images/jellystar.jpg" alt="Unihertz's Jelly Star a 3-inch smartphone">
+<p>Look at this tiny little guy! I daily-drove this phone for over a year after deciding to sell my gaming phone in an attempt to regain a bit of control on my screentime. The Jelly Star (who we call the Tamagotchi phone) surprised me a lot. I really expected myself to get tired of it in weeks or a month, but it really took no time to get used to.</p>
+<p>I haven't followed the dumbphone world closely since 2025, but I'm still around the subreddits hoping that some cool devices get released</p>
+<h2>Dumbphones?</h2>
+<p>I also own these two devices, I don't know if we can really call them dumbphones, but I like that they're weird in a way that helps me disconnect from technology.</p>
+<img src="/resources/images/titanpalma.png" alt="Side by side: Unihertz's Titan 2, a physical qwerty keyboard smartphone and Boox's Palma 2, an e-ink smartphone">
+<p>These are anoother Unihertz's device, the Titan 2 (with the keyboard) and an the Boox Palma 2 e-ink tablet. I supported Unihertz on kickstarter to get the Titan. It was a really cool device, but not as successful as the Jely Star for me. The e-ink tablet is truly a delight, especially if you struggle with eye issues like me, I've been in love with it for a while (They just released the Palma 3 to tease me, but I'm gonna stay with this one hehe)</p>
 </div>
 
-<div class="detail-item hidden" id="details-dumbphone">
-    
+<div class="detail-item prose" id="details-rpdr">
+    <h1>RuPaul's Drag Race</h1>
+<p>I think I've watched all US season from 7 onwards the All Stars from 2 onwards. Yes I got here because of Trixie and Katya. I actually started watching just the Pit Stop on youtube and then got a subscription to WoW and watched my way back</p>
+<p>I've also watched a couple of the Spain seasons (Supremme DeLuxe was the first queen I discovered back around 2015 and let me tell you that woman is responsible for the gay that I am today) and I've watched a bit of Italy, Mexico, the UK/DU vs the world and the Global All Stars</p>
+<img src="/resources/images/monetxchange.jpg" alt="Monet X Change the drag queen">
+<p><em>Long Live The Sponge!</em></p>
 </div>
 
-<div class="detail-item hidden" id="details-rpdr">
-    
+<div class="detail-item prose" id="details-taskmaster">
+    <h1>Taskmaster</h1>
+<p>Just absolute gold of a show. Alex Horne is a literal mastermind and Greg Davies is a once-in-a-lifetime fit for the role of taskmaster. Every single season's cast is perfectly made and all tasks keep improving season after season.</p>
+<p>I wanna go meet little Alex Horne just to thank him for making this and bringing us so much fucking joy.</p>
+<p><em>Currently watching Season 22 and rooting for my guy Richard Ayoade</em></p>
+<img src="/resources/images/taskmaster.jpg" alt="Greg Davies and Alex Horne from Taskmaster shaking hands in the Taskamaster set">
+<p>Sending love for all the weirdly tense and somewhat gay moments these two have given us</p>
 </div>
 
-<div class="detail-item hidden" id="details-taskmaster">
-    
+<div class="detail-item prose" id="details-familyguy">
+    <h1>Family Guy</h1>
+<p>At some point after the pandemic, people started uploading 4h videos to YouTube that contained whatever random mix of the same reuploaded episodes and, if you know me, one of my most common scenarios for using YouTube has always been playing looong videos in the backgroud while I do stuff, so of course I ended up watching all of them.</p>
+<p>Most of the time the episodes ended up being repeated over and over, or just a season on loop, but it had some surprise factor I ended up enjoying.</p>
+<p>Disney has cracked down on the copyright claims for these videos and it's pretty impossible to find them anymore in reasonable quality or without random cuts that make the videos unwhatchable, but I keep the love for the show and have almost all of it at home</p>
 </div>
 
-<div class="detail-item hidden" id="details-familyguy">
-    
+<div class="detail-item prose" id="details-catscountdown">
+    <h1>Cats Countdown</h1>
+<p>The British broadcast "Channel 4" has this show where they started to make the comics from the show "8 out of 10 cats" play countdown. Let me tell you this is the best thing they've ever done. (The worst thing is not having this show properly available outside of the UK, because having to watch it in YouTube reuploads is... suboptimal)</p>
+<img src="/resources/images/susierachel.png" alt="Susie Dent and Rachel Riley reacting to the show Countdown">
+<p>Just taking a moment to appreciate the most perfect pairing TV has ever made, I would watch literally anything with these two in it.</p>
+<p>If you know of an easy way to watch or download the show outside of the UK plesae tell me!</p>
+<p>R.I.P. Sean Lock ❤️</p>
 </div>
 
-<div class="detail-item hidden" id="details-catscountdown">
-    
-</div>
-
-<div class="detail-item hidden" id="details-f1">
-    
+<div class="detail-item prose" id="details-f1">
+    <h1>Formula 1</h1>
+<p>May I introduce you to my best friend, the F1 timing overlay.</p>
+<img src="/resources/images/f1overlay.png" alt="A partial screenshot of the F1 stream showing the timings overlay">
+<p>I started watching Formula 1 without understand a thing about cars or drivers, but I liked that it had so many numbers moving synchronizedly on the screen.</p>
+<p>I've always had a weird obsession with numbers, progression, graphics and statistics (blame the tism) so, even if I still don't really like cars, the constant strategizing and analyzing of data everywhere has kept me hooked onto the races for about 3 years now</p>
 </div>
 
 
       </div>
     </main>
-      </div>
   </div>
 
   <div id="startMenu" popover>
