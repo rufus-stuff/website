@@ -38,7 +38,13 @@ button, a.btn{
     padding: 0;
     cursor: pointer;
     box-shadow: none;
+  }
 }
+
+.scrollable {
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 /* Components */
@@ -203,6 +209,8 @@ div.window {
     align-items: center;
     justify-content: space-between;
     cursor: grab;
+
+    p { pointer-events: none; }
 
     button {
       padding: 0;

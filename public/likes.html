@@ -8,14 +8,14 @@
   <title>Stuff I Like | Rufus</title>
 </head>
 <body>
-  <div class="window" style="width: 730px;">
+  <div class="window" style="width: 760px;">
     <div class="window-bar">
       <p>I like many things</p>
       <button aria-label="Minimize window"></button>
     </div>
     <main class="window-view view-dual-panel">
-      <div>
-        <div style="grid-column: 1/-1; ">
+      <div class="scrollable">
+        <div>
           <h2>Here's stuff I like</h2>
           <p>If ever wonder about what we can chat about, I'm always happy to spend hours on any of these topics!</p>
         </div>
@@ -23,11 +23,10 @@
         {{ list/likes/itemButton#main }}
         </div>
       </div>
-      <div class="view-details">
+      <div class="view-details scrollable">
         {{ list/likes/content#main }}
       </div>
     </main>
-      </div>
   </div>
 
   {{ taskbar }}
